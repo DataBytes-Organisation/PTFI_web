@@ -20,26 +20,31 @@ First, clone the project to your local machine:
 git clone  
   
 ### Install Backend Dependencies  
-Navigate to the project root directory and install the required backend dependencies:  
+Navigate to the project root directory and install the required backend dependencies: 
+```  
 cd Privacy-Technology-Project--PTFI-_web  
-npm install
-  
+npm install  
+```  
 ### Install Frontend Dependencies  
 The project uses React for the frontend, so you need to install related dependencies. Navigate to the client folder and run the npm install command:
-  
+```  
 cd client  
-npm install
-  
+npm install  
+```  
 ### Start the Project  
 Start the Backend Server  
 From the project root directory, use the following command to start the backend server:  
+```  
 node server.js  
+```  
 Start the React Development Server  
-Open a new terminal window, make sure you are still in the client folder, then use the following command to start the frontend development server:
+Open a new terminal window, make sure you are still in the client folder, then use the following command to start the frontend development server:  
+```  
 npm start
+```  
 This will automatically open a new tab in your default browser and navigate to http://localhost:3000 to display the frontend interface of the project.
 
-##Feature Overview  
+## Feature Overview  
 The current version of the project supports the following features:  
 
 Communication between a local server and the client  
