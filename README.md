@@ -17,7 +17,7 @@ Before you begin, ensure you have installed the following on your development en
 
 First, clone the project to your local machine:  
 
-git clone  
+git clone  https://github.com/DataBytes-Organisation/PTFI_web.git
   
 ### Install Backend Dependencies  
 Navigate to the project root directory and install the required backend dependencies: 
