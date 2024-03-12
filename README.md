@@ -22,7 +22,7 @@ git clone  https://github.com/DataBytes-Organisation/PTFI_web.git
 ### Install Backend Dependencies  
 Navigate to the project root directory and install the required backend dependencies: 
 ```  
-cd Privacy-Technology-Project--PTFI-_web  
+cd PTFI_web  
 npm install  
 ```  
 ### Install Frontend Dependencies  
