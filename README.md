@@ -17,7 +17,6 @@ Before you begin, ensure you have installed the following on your development en
 
 First, clone the project to your local machine:  
 
-```bash  
 git clone  
   
 ### Install Backend Dependencies  
