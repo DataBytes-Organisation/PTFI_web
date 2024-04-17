@@ -1,0 +1,82 @@
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#benefits-scroller-container {
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-bottom: 100px;
+  max-height: 400px;
+  overflow-x: auto;
+  border: 1px solid;
+  padding: 10px;
+}
+  
+.horizontal-scroller {
+  display: flex;
+}
+
+
+  
+.horizontal-scroller .benefit {
+  min-width: 1200px;
+  background-color: lightgray; 
+  border-radius: 5px; 
+  padding: 20px;
+  margin-right: 40px;
+}
+  
+.horizontal-scroller .benefit h2 {
+  margin-top: 2px; 
+  font-size: 18px; 
+  font: 'Franklin Gothic Medium'; 
+}
+  
+.horizontal-scroller .benefit p {
+  margin-top: 5px; 
+  font-size: 14px; 
+  text-align: left; 
+}
+  
+
+#news-scroller-container {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 50px;
+  max-height: 400px;
+  overflow-x: auto;
+  border: 1px solid;
+  padding: 10px;
+}
+  
+.horizontal-scroller {
+  display: flex;
+}
+
+.horizontal-scroller .news {
+  min-width: 400px;
+  max-width: 600px;
+  background-color: lightgray; 
+  border-radius: 5px; 
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.horizontal-scroller .news img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.horizontal-scroller .news p {
+  font-size: 16px; 
+  text-align: center; 
+  margin-top: 10px; 
+}
+
+.horizontal-scroller .news .date {
+  text-align: right;
+}
