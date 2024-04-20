@@ -10,13 +10,6 @@ function AboutUsPage() {
           <p>general mission (gpm)</p>
           <button>Learn More</button>
       </section>
-
-function AboutUsPage() {
-  return (
-    <div>
-      <p> PLACEHOLDER TEST TEXT ABOUT US</p>
-    </div>
-
   );
 }
 

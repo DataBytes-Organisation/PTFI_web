@@ -8,11 +8,6 @@
     align-items: center;
     padding: 0px;
     background-color: #0B212E;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-    background-color: #333;
 }
   
 #logo-container {
@@ -22,7 +17,6 @@
 #logo {
     width: 64px;
     height: 64px;
-    width: 16px; 
 }
   
 #nav-links {
@@ -35,7 +29,6 @@
     text-decoration: none;
     margin-left: 0px;
     margin-right: 40px;
-    margin-right: 16px; 
 }
 
 #join-button {
@@ -58,8 +51,4 @@
     border: none;
     padding: 10px;
     border-radius: 32px;
-    color: black;
-    border: none;
-    padding: 16px;
-    border-radius: 20px;
 }
