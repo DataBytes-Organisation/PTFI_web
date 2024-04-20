@@ -11,6 +11,14 @@ Before you begin, ensure you have installed the following on your development en
 - npm (usually installed with Node.js)  
 - Git  
 
+## Repository Overview
+
+|Directory|Description|
+|---|---|
+|/|Contains the NodeJS server.|
+|/client|Contains the React application that is served by the NodeJS server.|
+|/shell_scripts|Contains bash shell scripts for building the server.|
+
 ## Installation Steps  
 
 ### Clone the Repository  
@@ -70,11 +78,10 @@ Display of the homepage, containing a simple greeting: "This is the main page"
 ## Contribution Guidelines  
 We welcome all forms of contributions, whether it's proposing new features, bug fixes, or documentation improvements. If you would like to contribute code, please follow these steps:  
 
-Fork the project repository  
 Create your feature branch 
 Commit your changes 
 Push to the branch 
-Create a new Pull Request
+Create a new Pull Request to have it reviewed. Merge only after it is approved by a reviewer.
   
 ## License  
 This project is licensed under the MIT License. For more information, please see the LICENSE file.  
