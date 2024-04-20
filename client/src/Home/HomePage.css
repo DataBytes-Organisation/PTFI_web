@@ -61,6 +61,43 @@
 
 }
 
+    margin: 80px;
+    padding: 20px;
+}
+  
+#company-vision h1 {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  
+#intro-text p {
+    text-align: left;
+}
+  
+#learn-more-button {
+    text-align: right;
+}
+  
+/*button style applied to anchor of link*/
+#learn-more-button a {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: teal;
+    color: white;
+    text-decoration: none;
+}
+  
+  
+#our-services {
+    text-align: center;   
+}
+  
+#section-over-image {
+    width: 100%;
+    text-align: center;
+}
+  
 #service-boxes {
     margin-left: 300px;
     margin-right: 300px;
@@ -68,6 +105,7 @@
     justify-content: space-around;
 }
 
+  
 .service-box {
     flex: 1;
     margin: 10px;
@@ -86,4 +124,5 @@
     margin: auto;
 }
 
+ 
 
