@@ -124,25 +124,17 @@ ul li a {
     max-height: 32px;
 }
 
-
-  }
-  
-  
-  .footer-column ul li a {
-    color: white;
-    text-decoration: none;
-  }
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+}
   
 
-  .contact-button button {
-    color: teal;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px 20px;
-    border: 1px solid teal;
-    cursor: pointer;
-  }
-
-  
-
-  
+.contact-button button {
+  color: teal;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: 1px solid teal;
+  cursor: pointer;
+}
