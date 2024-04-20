@@ -23,6 +23,7 @@ function App() {
             <NavBar/>
             <Routes>
                 <Route path='/' element={<HomePage/>}/>
+                <Route path='/index' element={<HomePage/>}/>
                 <Route path='/AboutUs' element={<AboutUsPage/>}/>
                 <Route path='/Membership' element={<MembershipPage/>}/>
                 <Route path='/Publication' element={<PublicationPage/>}/>
@@ -36,22 +37,6 @@ function App() {
             <FooterPanel/>
         </div>
     );
-  return (
-    <div>
-      {/* NAVBAR AND FOOTERPANEL ALWAYS PRESENT, EVERYTHING ELSE DETERMINED BY URL EXTENSION USING ROUTES*/}
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/AboutUs' element={<AboutUsPage />} />
-        <Route path='/Membership' element={<MembershipPage />} />
-        <Route path='/Publication' element={<PublicationPage />} />
-        <Route path='/Technical' element={<TechnicalPage />} />
-        <Route path='/Join' element={<JoinPage />} />
-        <Route path='/Contact' element={<ContactPage />} />
-      </Routes>
-      <FooterPanel/>
-    </div>
-  );
 }
 
 export default App;
