@@ -1,58 +1,92 @@
 .footer-panel {
-    background-color: teal;
+    background: linear-gradient(to right, #93b4c4, #0b212e);
     color: white;
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-  }
-  
-  .footer-logo img {
-    max-width: 100%;
-  }
-  
-  .footer-links {
-    display: flex;
-  }
-  
-  .footer-column {
-    margin-right: 20px;
-  }
-  
-  
-  .footer-column ul {
+}
+
+.footer-logo{
+    width: 25%;
+    background-color: #007bff;
+}
+
+.footer-logo img {
+    margin: 30px;
+    float: left;
+    width: 128px;
+    height: 128px;
+}
+
+.footer-links {
+    width: 88%;
+    display: inline-block;
+}
+
+.footer-column {
+    width: 25%;
+    display: inline-block;
+    float: left;
+    margin: 30px;
+}
+
+.footer-column-special{
+    width: 25%;
+    display: inline-block;
+    float: right;
+    margin: 30px;
+}
+
+
+ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .footer-column ul li {
-    margin-bottom: 5px;
-  }
-  
-  .contact-button button {
-    background-color: white;
-    color: teal;
+}
+
+ul li {
+    margin-left: 150px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #0b212e;
+    color: #ffffff;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
-  
-  .footer-column ul li a {
+    margin-left: 25px;
+}
+
+
+ul li a {
     color: white;
     text-decoration: none;
-  }
-  
+}
 
-  .contact-button button {
-    color: teal;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px 20px;
-    border: 1px solid teal;
-    cursor: pointer;
-  }
+
+.rights {
+    width: 100%;
+    height: 50px;
+    background-color: #0b212e;
+    text-align: center;
+}
+
+#line {
+    width: 50%;
+    height: 10px;
+    border-bottom: solid #ACC0D8 1px;
+    margin: auto;
+}
+
+#statement {
+    font-size: 10px;
+}
+
+.footer-column-special img{
+    margin: 10px;
+    max-width: 32px;
+    max-height: 32px;
+}
   
 
   
