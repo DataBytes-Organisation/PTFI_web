@@ -30,6 +30,8 @@ if (PROTOCOL === "https") {
   });
 }
 else {
-  app.listen(PORT, () => console.log(`Server running using http protocol at http://localhost:${PORT}`));
+  app.listen(PORT, () => {
+    console.log(`Server running using http protocol at http://localhost:${PORT}`)
+});
 }
 
