@@ -3,7 +3,7 @@ import './ContactPage.css';
 
 function ContactPage() {
   return (
-    <div>
+    <div id='ContactPage'>
       <p> PLACEHOLDER TEST TEXT CONTACT</p>
     </div>
   );

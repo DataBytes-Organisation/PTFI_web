@@ -3,7 +3,7 @@ import './PublicationPage.css';
 
 function PublicationPage() {
   return (
-    <div>
+    <div id='PublicationPage'>
       <p> PLACEHOLDER TEST TEXT PUBLICATION</p>  
     </div>
   );
