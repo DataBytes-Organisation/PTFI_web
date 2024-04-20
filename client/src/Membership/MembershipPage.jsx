@@ -3,8 +3,6 @@ import './MembershipPage.css';
 
 function MembershipPage() {
   return (
-
-    <div id='MembershipPage'>
     <div>
       <p> PLACEHOLDER TEST TEXT MEMBERSHIP</p>  
     </div>
