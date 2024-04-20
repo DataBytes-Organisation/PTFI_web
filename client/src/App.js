@@ -16,7 +16,6 @@ import TermsAndConditions from "./Terms&Conditions/Terms&Conditions";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import RegistrationPage from "./Registration/Registraion";
 
-
 function App() {
     return (
         <div>
@@ -24,6 +23,7 @@ function App() {
             <NavBar/>
             <Routes>
                 <Route path='/' element={<HomePage/>}/>
+                <Route path='/index' element={<HomePage/>}/>
                 <Route path='/AboutUs' element={<AboutUsPage/>}/>
                 <Route path='/Membership' element={<MembershipPage/>}/>
                 <Route path='/Publication' element={<PublicationPage/>}/>

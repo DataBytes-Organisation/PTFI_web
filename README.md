@@ -11,6 +11,14 @@ Before you begin, ensure you have installed the following on your development en
 - npm (usually installed with Node.js)  
 - Git  
 
+## Repository Overview
+
+|Directory|Description|
+|---|---|
+|/|Contains the NodeJS server.|
+|/client|Contains the React application that is served by the NodeJS server.|
+|/shell_scripts|Contains bash shell scripts for building the server.|
+
 ## Installation Steps  
 
 ### Clone the Repository  
@@ -32,12 +40,28 @@ cd client
 npm install  
 ```  
 ### Start the Project  
-Start the Backend Server  
-From the project root directory, use the following command to start the backend server:  
+**Start the Backend Server**
+
+From the project root directory, use the following command to start the backend server that serves the website:  
 ```  
 node server.js  
-```  
-Start the React Development Server  
+```
+The backend server supports both HTTP and HTTPs protocols. It expects SSL scripts to be located at ./ssl (see server.js for the filenames).
+
+```
+# http port 5000 like default  
+node server.js --protocol http --port 5000
+```
+
+```
+# https port 5050
+node server.js --protocol https --port 5050
+```
+
+Both --protocol and --port are optional. --protocol defaults to http and --port defaults to 5000
+
+**Start the React Development Server**
+
 Open a new terminal window, make sure you are still in the client folder, then use the following command to start the frontend development server:  
 ```  
 npm start
@@ -54,11 +78,10 @@ Display of the homepage, containing a simple greeting: "This is the main page"
 ## Contribution Guidelines  
 We welcome all forms of contributions, whether it's proposing new features, bug fixes, or documentation improvements. If you would like to contribute code, please follow these steps:  
 
-Fork the project repository  
 Create your feature branch 
 Commit your changes 
 Push to the branch 
-Create a new Pull Request
+Create a new Pull Request to have it reviewed. Merge only after it is approved by a reviewer.
   
 ## License  
 This project is licensed under the MIT License. For more information, please see the LICENSE file.  
