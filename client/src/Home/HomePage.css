@@ -1,4 +1,66 @@
 #home-page {
+    margin-top: 64px;
+}
+
+#company-vision {
+    background: linear-gradient(to right, #93b4c4, #0b212e);
+    width: 100%;
+    display: inline-block;
+}
+
+#company-intro {
+    width: 30%;
+    display: inline-block;
+    float: left;
+}
+
+
+#company-intro h1 {
+    text-align: left;
+    font-size: 38px;
+    margin: 50px 0px 20px 50px;
+}
+
+#intro-text p {
+    text-align: left;
+}
+
+#learn-more-button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 0px;
+
+}
+
+/*button style applied to anchor of link*/
+#learn-more-button a {
+    padding: 20px;
+    border-radius: 32px;
+    background-color: #0b212e;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+#our-services {
+    text-align: center;
+}
+
+#section-image {
+    display: inline-block;
+    float: right;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-right: 30px;
+    background-image: url('../Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 60%;
+
+}
+
     margin: 80px;
     padding: 20px;
 }
@@ -42,6 +104,7 @@
     display: flex;
     justify-content: space-around;
 }
+
   
 .service-box {
     flex: 1;
@@ -49,5 +112,17 @@
     padding: 10px;
     border: 1px solid gray;
 }
-  
+
+#intro-text {
+    margin-top: 20px;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+#news-services {
+    max-width: 90%;
+    margin: auto;
+}
+
+ 
 

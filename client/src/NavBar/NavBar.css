@@ -1,4 +1,13 @@
 #navbar {
+    position: fixed;
+    display: flex;
+    top: 0px;
+    width: 100%;
+    height: 64px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color: #0B212E;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,21 +20,44 @@
 }
   
 #logo {
+    width: 64px;
+    height: 64px;
     width: 16px; 
 }
   
 #nav-links {
     display: flex;
+    margin-left: 350px;
 }
   
 .nav-link {
     color: white;
     text-decoration: none;
+    margin-left: 0px;
+    margin-right: 40px;
     margin-right: 16px; 
 }
 
 #join-button {
     background-color: white;
+    text-decoration: none;
+    margin-left: 50px;
+    margin-right: 0px;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 32px;
+}
+
+#registration-button {
+    background-color: white;
+    text-decoration: none;
+    margin-left: 0px;
+    margin-right: 50px;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 32px;
     color: black;
     border: none;
     padding: 16px;
