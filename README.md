@@ -32,7 +32,7 @@ cd client
 npm install  
 ```  
 ### Start the Project  
-####Start the Backend Server  
+**Start the Backend Server**
 From the project root directory, use the following command to start the backend server that serves the website:  
 ```  
 node server.js  
@@ -51,7 +51,7 @@ node server.js --protocol https --port 5050
 
 Both --protocol and --port are optional. --protocol defaults to http and --port defaults to 5000
 
-####Start the React Development Server  
+**Start the React Development Server**
 Open a new terminal window, make sure you are still in the client folder, then use the following command to start the frontend development server:  
 ```  
 npm start
