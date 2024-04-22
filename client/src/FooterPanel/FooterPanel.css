@@ -84,8 +84,11 @@ ul li a {
 
 .footer-column-special img{
     margin: 10px;
-    max-width: 32px;
-    max-height: 32px;
+    width: 32px; /* Set both width and height to ensure uniformity */
+    height: 32px;
+    object-fit: cover; /* This makes sure the image covers the allotted space without distorting the aspect ratio */
+    border-radius: 8px;  /* Adds rounded corners. Adjust the pixel value to increase or decrease the curve.*/
+    
 }
   
 

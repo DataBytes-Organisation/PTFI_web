@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-import './NewsEventSection.css'
+import React, { useState, useEffect } from 'react';
+import './NewsEventSection.css';
 import image1 from '../../Images/Logo.png';
 import image2 from '../../Images/Logo.png';
 import image3 from '../../Images/Logo.png';
-
 
 const NewsEventsSection = () => {
     const [currentNewsEvent, setCurrentNewsEvent] = useState(0);
@@ -26,6 +25,14 @@ const NewsEventsSection = () => {
         },
     ];
 
+    // Handle automatic sliding
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            handleNextNewsEvent();
+        }, 3000); // Change slides every 3000 milliseconds (3 seconds)
+        return () => clearTimeout(timer); // Clean up the timer
+    }, [currentNewsEvent]); // Dependencies for useEffect
+
     const handlePrevNewsEvent = () => {
         setCurrentNewsEvent(
             (currentNewsEvent - 1 + newsEvents.length) % newsEvents.length
@@ -38,16 +45,12 @@ const NewsEventsSection = () => {
 
     return (
         <section className="news-events">
-            <h2>News &amp; Event</h2>
+            <h2>News & Event</h2>
             <div className="news-event-container">
                 <button onClick={handlePrevNewsEvent}>&#8249;</button>
                 <div className="news-event-card">
                     <div className="content-box">
-                        <img
-                            src={newsEvents[currentNewsEvent].image}
-                            alt="News/Event"
-
-                        />
+                        <img src={newsEvents[currentNewsEvent].image} alt="News/Event" />
                         <p id="description">{newsEvents[currentNewsEvent].description}</p>
                         <p id="date">{newsEvents[currentNewsEvent].date}</p>
                     </div>

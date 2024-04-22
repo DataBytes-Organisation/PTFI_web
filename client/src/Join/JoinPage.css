@@ -40,24 +40,32 @@
     display: inline-block;
     width: 25%;
     margin-bottom: 1px;
-    margin-left: 20px;
+    margin-left: 35px;
 }
 
 
 .button-external button {
     width: 50%;
     height: 42px;
+    margin: 10px 0; /* Standard margin around buttons */
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
-    border-radius: 16px;
+    border-radius: 8px;
     background-color: white;
     color: black;
     cursor: pointer;
-    margin: 30px;
-    text-align: center;
+    display: flex; /* Use flex to center align the image and text */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+    
 }
 
+.button-external button img {
+    margin-right: 10px; /* Space between the icon and the text */
+    height: 24px; /* Unified height for all icons */
+    width: auto; /* Width adjusts based on aspect ratio */
+}
 
 .button-external button:hover {
     background-color: #939090;
@@ -72,19 +80,22 @@
 }
 
 #Google {
-    max-height: 24px;
-    max-width: 24px;
+    height: 16px;  /* Set a fixed height for both icons */
+    width: 16px;   /* Allow the width to adjust based on the aspect ratio */
 }
 
 #Microsoft {
-    max-height: 16px;
-    max-width: 16px;
+    height: 24px;  /* Set a fixed height for both icons */
+    width: 24px;   /* Allow the width to adjust based on the aspect ratio */
 }
 
 .button-external{
-    width: 500px;
-    text-align: center;
-    margin: auto;
+    width: 80%; /* Adjusted to not span the entire width of the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adds space between text and buttons */
+    margin-left: 90px;
 }
 
 

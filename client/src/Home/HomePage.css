@@ -81,10 +81,20 @@
     font-weight: bold;
 }
 
-#news-services {
+#news {
     max-width: 90%;
     margin: auto;
+    margin-left: 400px;
 }
+
+#services {
+    max-width: 90%;
+    margin: auto;
+    margin-left: -200px;
+}
+
+
+
 
  
 
