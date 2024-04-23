@@ -1,11 +1,35 @@
-#home-page {
-    margin-top: 64px;
+#back-ground{
+    background: linear-gradient(to right, #EDF5FC, #DFF0FF);
+    background-image: url('../Images/backgroundSource.png');
+    background-repeat: no-repeat;
+    
 }
 
+#home-page {
+    margin-top: 64px;
+    width: 62.5vw; 
+  margin: 0 auto; 
+  max-width: 1200px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 6px 200px rgba(0,0,0,0.12);
+ 
+}
+/* automatically tansfrom size according to the mainstream screens: 1080p 2k 4k */
+@media (min-width: 2560px) {
+    .main-content {
+      width: 46.875vw; 
+    }
+  }
+  
+  @media (min-width: 3840px) {
+    .main-content {
+      width: 31.25vw; 
+    }
+  }
 #company-vision {
-    background: linear-gradient(to right, #93b4c4, #0b212e);
+    background: linear-gradient(to right, #708BA5, #1F4F7B);
     width: 100%;
     display: inline-block;
+    margin-top: 70px;
 }
 
 #company-intro {
@@ -34,12 +58,13 @@
 
 /*button style applied to anchor of link*/
 #learn-more-button a {
-    padding: 20px;
+    padding: 15px;
     border-radius: 32px;
     background-color: #0b212e;
     color: white;
     text-decoration: none;
     display: inline-block;
+    margin-top:100px;
 }
 
 
@@ -56,7 +81,7 @@
     background-image: url('../Images/background.jpg');
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 400px;
     width: 60%;
 }
 

@@ -7,7 +7,8 @@ function NavBar() {
         <div id="navbar">
             {/*logo should be imported added to a  resource folder and referenced appropriately*/}
             <div id="logo-container">
-                <img id="logo" src={require("../Images/Logo.png")} className="logo" alt="Logo"/>
+                {/* <img id="logo" src={require("../Images/Logo.png")} className="logo" alt="Logo"/> Jiakun Li: it could be better we use simple PTFI as the logo which looks more adevanced */}
+                PTFI
             </div>
 
             <div id="nav-links">
