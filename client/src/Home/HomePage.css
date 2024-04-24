@@ -35,7 +35,7 @@
 /*button style applied to anchor of link*/
 #learn-more-button a {
     padding: 20px;
-    border-radius: 32px;
+    border-radius: 8px;
     background-color: #0b212e;
     color: white;
     text-decoration: none;
