@@ -75,6 +75,7 @@ button[type="submit"]:hover {
     margin: 1rem 0;
     color: #888;
     margin-top: 10px;
+    margin-bottom: -10px;
     }
 
     
@@ -165,7 +166,8 @@ button[type="submit"]:hover {
     display: flex; /* Use flex to center align the image and text */
     align-items: center; /* Vertical alignment */
     justify-content: center; /* Horizontal alignment */
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-left:-15px;
 }
 
 .registration-text  h6 {

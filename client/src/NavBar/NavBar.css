@@ -39,7 +39,7 @@
     color: black;
     border: none;
     padding: 10px;
-    border-radius: 32px;
+    border-radius: 8px;
 }
 
 #registration-button {
@@ -50,5 +50,5 @@
     color: black;
     border: none;
     padding: 10px;
-    border-radius: 32px;
+    border-radius: 8px;
 }
