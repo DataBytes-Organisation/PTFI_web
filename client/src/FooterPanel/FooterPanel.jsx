@@ -36,7 +36,7 @@ function FooterPanel() {
                 <div className="footer-column-special">
                     <div className="contact-button">
                         <Link to="/Contact">
-                            <button>Contact US</button>
+                        <button className="contact-us-button">Contact US</button>
                         </Link>
                     </div>
                     <a href="https://www.facebook.com/" title="Facebook">

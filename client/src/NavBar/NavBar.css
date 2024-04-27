@@ -42,13 +42,23 @@
     border-radius: 8px;
 }
 
-#registration-button {
-    background-color: white;
-    text-decoration: none;
-    margin-left: 0px;
-    margin-right: 50px;
-    color: black;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
+
+
+#join-button, #registration-button {
+    display: inline-block; /* Necessary for proper padding and margins */
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none; /* Removes underline from links */
+    background-color: white; /* Blue background */
+    color: #0b212e; /* White text */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
+
+#join-button:hover, #registration-button:hover {
+    background-color: #0056b3; /* Change background to white on hover */
+    color: white; /* Change text color to dark blue on hover */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add shadow for better visibility */
+}
+
+

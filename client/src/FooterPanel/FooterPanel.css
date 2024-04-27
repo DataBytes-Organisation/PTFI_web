@@ -58,6 +58,7 @@ button {
 }
 
 
+
 ul li a {
     color: white;
     text-decoration: none;
@@ -91,5 +92,21 @@ ul li a {
     
 }
   
+.contact-us-button {
+    background-color: #0b212e; /* Dark blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color and background */
+}
+
+.contact-us-button:hover {
+    background-color: #0056b3; /* Change background to white */
+    color: #0b212e; /* Change text color to dark blue */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add shadow for better visibility */
+}
+
 
   
