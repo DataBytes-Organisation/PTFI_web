@@ -3,7 +3,10 @@
     color: white;
     justify-content: space-between;
     align-items: center;
+    clear: both;
 }
+
+
 
 .footer-logo{
     width: 25%;

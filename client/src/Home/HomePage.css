@@ -25,20 +25,12 @@
     text-align: left;
 }
 
-#learn-more-button a {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+#learn-more-button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 0px;
 
-#learn-more-button a:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
 }
-
 
 /*button style applied to anchor of link*/
 #learn-more-button a {
@@ -102,6 +94,16 @@
 }
 
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#company-vision,
+#slideshow {
+    clear: both;
+}
 
 
  
