@@ -55,6 +55,10 @@
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
+#registration-button{
+    margin-right: 200px;
+}
+
 #join-button:hover, #registration-button:hover {
     background-color: #0056b3; /* Change background to white on hover */
     color: white; /* Change text color to dark blue on hover */
