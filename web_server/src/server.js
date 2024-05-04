@@ -51,14 +51,13 @@ class HTTPServerBuilder extends BuilderBase {
 
 class HTTPSServerBuilder extends BuilderBase {
   build() {
-    var http_app = new HTTPServerBuilder().buildAndGet();
+    var httpApp = new HTTPServerBuilder().buildAndGet();
     var options = {
       key: fs.readFileSync(path.join(__dirname, SSL_KEY_PATH)),
       cert: fs.readFileSync(path.join(__dirname, SSL_CERTIFICATE_PATH)),
     };
   
-    var https_server = https.createServer(options, http_app);
-    this.result = https_server;
+    this.result = https.createServer(options, httpApp);
   }
 }
 
