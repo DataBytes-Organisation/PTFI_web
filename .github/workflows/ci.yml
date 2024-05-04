@@ -29,4 +29,3 @@ jobs:
     - run: |
         cd shell_scripts
         sh build_client.sh
-    - run
