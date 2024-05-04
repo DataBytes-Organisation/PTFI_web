@@ -1,3 +1,3 @@
 *.pem
-ssl/
-node_modules/
+*ssl/
+*node_modules/
