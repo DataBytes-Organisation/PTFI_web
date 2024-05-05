@@ -27,8 +27,9 @@
 .nav-link {
     color: white;
     text-decoration: none;
-    margin-left: 0px;
-    margin-right: 40px;
+    margin-left: 30px;
+    margin-right: 5px;
+    margin-top: 15px;
 }
 
 #join-button {
@@ -65,4 +66,48 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add shadow for better visibility */
 }
 
+.hamburger-menu {
+    display: block;  /* Hidden on desktop */
+    cursor: pointer;
+    font-size: 20px;  /* Adjust size as needed */
+    color: white;  /* Set color to white */
+    padding: 10px;
+    margin-left: 0px; /* Adjust spacing as needed to position it next to the logo */
+}
 
+/* General mobile styles */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show the hamburger menu on mobile */
+        cursor: pointer;
+        font-size: 30px;
+        color: white;
+    }
+
+    #nav-links {
+        margin-left: 50px;
+        position: absolute;
+        top: 64px; /* Position right below the navbar */
+        width: 100%;
+        flex-direction: column;
+        background-color: #0B212E;
+        display: none; /* Initially hide the navigation links */
+    }
+
+    #nav-links.display-flex {
+        display: flex; /* This class is toggled by clicking the hamburger menu */
+    }
+
+    #join-button, #registration-button {
+        display: inline-block; /* Necessary for proper padding and margins */
+        padding: 10px 20px;
+        margin: 5px;
+        margin-left: 30px;
+        margin-right: 220px;
+        text-decoration: none; /* Removes underline from links */
+        background-color: white; /* Blue background */
+        color: #0b212e; /* White text */
+        border-radius: 8px; /* Rounded corners */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    }
+}
