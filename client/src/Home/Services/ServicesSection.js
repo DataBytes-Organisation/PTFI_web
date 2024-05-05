@@ -1,5 +1,5 @@
 // HorizontalScrollers/ServicesSection.js
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './ServicesSection.css'
 
 const ServicesSection = () => {
@@ -19,6 +19,14 @@ const ServicesSection = () => {
             description: 'Description3',
         },
     ];
+
+    // Handle automatic sliding
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            handleNextNewsEvent();
+        }, 3000); // Change slides every 3000 milliseconds (3 seconds)
+        return () => clearTimeout(timer); // Clean up the timer
+    }, [currentService]); // Dependencies for useEffect
 
     const handlePrevService = () => {
         setCurrentService(

@@ -30,13 +30,21 @@ function HomePage() {
 
                 </div>
             </div>
+            <div id='slideshow'>
             <BenefitsSection />
-            <div id='news-services'>
+            <div id='news'>
                 <NewsEventSection/>
-                <ServicesSection/>
             </div>
+
            
         </div>
+
+
+            <div id='services'>
+                <ServicesSection/>
+            </div>
+            </div>
+
         </div>
     );
 }

@@ -1,15 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import './FooterPanel.css';
 import image_twitter from '../Images/Twitter.jpg'
 import image_FaceBook from '../Images/FaceBook.png'
 import image_Instagram from '../Images/Ins.png'
+import logo from '../Images/Logo.png';
 
 function FooterPanel() {
     return (
         <div className="footer-panel">
             <div className="footer-logo">
-                <img src={require("../Images/Logo.png")} alt="Logo"/>
+                 {/*logo should be imported added to a  resource folder and referenced appropriately*/}
+            <div id="logo-container">
+                {/* Wrap the image with a Link component */}
+                <Link to="/#company-vision">
+                    <img id="logo" src={logo} className="logo" alt="Logo"/>
+                </Link>       </div>
             </div>
             <div className="footer-links">
                 <div className="footer-column">
@@ -30,7 +36,7 @@ function FooterPanel() {
                 <div className="footer-column-special">
                     <div className="contact-button">
                         <Link to="/Contact">
-                            <button>Contact US</button>
+                        <button className="contact-us-button">Contact US</button>
                         </Link>
                     </div>
                     <a href="https://www.facebook.com/" title="Facebook">
