@@ -111,5 +111,119 @@ ul li a {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add shadow for better visibility */
 }
 
+/* General mobile styles */
+@media (max-width: 768px) {
+    .footer-panel {
+        background: linear-gradient(to right, #93b4c4, #0b212e);
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+        clear: both;
+    }
+    
+    
+    .footer-logo img {
+        margin: 10px;
+        float: left;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .footer-links {
+        width: 88%;
+        display: inline-block;
+    }
+    
+    .footer-column {
+        width: 25%;
+        display: inline-block;
+        float: left;
+        margin: 10px;
+        margin-left: -50px;
+        font-size: 12px;
+    }
+    
+    .footer-column-special{
+        width: 25%;
+        display: inline-block;
+        float: right;
+        margin: 30px;
+    }
+    
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    ul li {
+        margin-left: 150px;
+        margin-bottom: 10px;
+    }
+    
+    button {
+        background-color: #0b212e;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-left: 25px;
+    }
+    
+    
+    
+    ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    
+    .rights {
+        width: 100%;
+        height: 50px;
+        background-color: #0b212e;
+        text-align: center;
+    }
+    
+    #line {
+        width: 50%;
+        height: 10px;
+        border-bottom: solid #ACC0D8 1px;
+        margin: auto;
+    }
+    
+    #statement {
+        font-size: 10px;
+    }
+    
+    .footer-column-special img{
+        margin: 5px;
+        width: 20px; /* Set both width and height to ensure uniformity */
+        height: 20px;
+        object-fit: cover; /* This makes sure the image covers the allotted space without distorting the aspect ratio */
+        border-radius: 8px;  /* Adds rounded corners. Adjust the pixel value to increase or decrease the curve.*/
+        
+    }
+      
+    .contact-us-button {
+        background-color: #0b212e; /* Dark blue background */
+        color: #ffffff; /* White text */
+        border: none;
+        border-radius: 8px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 12px;
+        margin: 5px;
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition for color and background */
+    }
+    
+    .contact-us-button:hover {
+        background-color: #0056b3; /* Change background to white */
+        color: #0b212e; /* Change text color to dark blue */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add shadow for better visibility */
+    }
+
+}
 
   
