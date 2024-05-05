@@ -6,12 +6,10 @@ This module contains backend web server code for the PTFI website.
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const process = require('process');
-const minimist = require('minimist');
 const https = require("https");
 const fs = require("fs");
 
-// Actual constants
+// Constants
 const HTTP_PROTOCOL = "http";
 const HTTPS_PROTOCOL = "https";
 const DEFAULT_PORT = "5000";
@@ -19,27 +17,50 @@ const SSL_KEY_PATH = "../ssl/localhost-key.pem";
 const SSL_CERTIFICATE_PATH = "../ssl/localhost.pem";
 const CLIENT_BUILD_PATH = "../../client/build";
 
+/**
+ * Base class for builder pattern
+ */
 class BuilderBase {
+  /**
+   * Default constructor for builder pattern
+   */
   constructor() {
     this.result = null
   }
 
+  /**
+   * Build method that inheriting classes should override
+   */
   build () {
     // Inheriting classes overwrite this method
     console.log("Builder build method requires implementation.")
   }
 
+  /**
+   * Basic get method to return built object
+   * @returns {*} Returns this.result
+   */
   get() {
     return this.result;
   }
 
+  /**
+   * Builds and then returns build object
+   * @returns {*} Returns this.result
+   */
   buildAndGet() {
     this.build();
     return this.get();
   }
 }
 
+/**
+ * Class following builder pattern that builds Express http server application.
+ */
 class HTTPServerBuilder extends BuilderBase {
+  /**
+   * Builds Express http server application and sets as this.result
+   */
   build() {
     var app = express();
     app.use(express.static(path.join(__dirname, CLIENT_BUILD_PATH)));
@@ -49,7 +70,13 @@ class HTTPServerBuilder extends BuilderBase {
   }
 }
 
+/**
+ * Class following builder pattern that builds https.Server
+ */
 class HTTPSServerBuilder extends BuilderBase {
+  /**
+   * Builds https.Server application and sets as this.result
+   */
   build() {
     var httpApp = new HTTPServerBuilder().buildAndGet();
     var options = {
@@ -61,7 +88,14 @@ class HTTPSServerBuilder extends BuilderBase {
   }
 }
 
+/**
+ * 'Builds' HTTPServer or HTTPSServer based on protocol provided.
+ */
 class ServerBuilder extends BuilderBase {
+  /**
+   * 
+   * @param {String} protocol Expects http or https as value
+   */
   build(protocol) {
     if (protocol == HTTP_PROTOCOL) {
       var builder = new HTTPServerBuilder();
@@ -74,19 +108,50 @@ class ServerBuilder extends BuilderBase {
     }
     this.result = builder.buildAndGet()
   }
+  /**
+   * Build and return http server or https server based on provided protcol
+   * 
+   * @param {String} protocol Expects http or https as value
+   * @returns {*} Returns Express http server or https.server
+   */
   buildAndGet(protocol) {
     this.build(protocol);
     return this.get();
   }
 }
 
+/**
+ * Class for running PTFI website.
+ */
 class PTFIWebsite {
-  constructor(protocol, port) {
-    this.port = port;
-    this.protocol = protocol;
-    this.server = new ServerBuilder().buildAndGet(protocol);
+  /**
+   * Constructor console arguments to configure web server.
+   * 
+   * @param {Array} args Console arguments. Expect it to contain port and protocol
+   */
+  constructor(args) {
+    var parsedArgs = this.parseArgs(args)
+    this.protocol = parsedArgs[0]
+    this.port = parsedArgs[1]
+    this.server = new ServerBuilder().buildAndGet(this.protocol);
   }
 
+  /**
+   * Accepts console arguments and provides default values if they are undefined.
+   * Returns result
+   * 
+   * @param {*} args 
+   * @returns {Array} First element is String http or https, Second being port as number
+   */
+  parseArgs(args) {
+    var protocol = args.protocol || HTTP_PROTOCOL;
+    var port = args.port || DEFAULT_PORT;
+    return [protocol, port]
+  }
+
+  /**
+   * Runs the web server.
+   */
   run() {
     this.server.listen(this.port, () => {
       console.log(`Server running using ${this.protocol} protocol at ${this.protocol}://localhost:${this.port}`);
@@ -94,11 +159,9 @@ class PTFIWebsite {
   }
 }
 
-if (require.main == module) {
-  const ARGS = minimist(process.argv.slice(2));
-  const PROTOCOL = ARGS.protocol || HTTP_PROTOCOL;
-  const PORT = ARGS.port || DEFAULT_PORT;
-  
-  site = new PTFIWebsite(PROTOCOL, PORT)
-  site.run()
+module.exports = {
+  HTTPServerBuilder,
+  HTTPSServerBuilder,
+  ServerBuilder,
+  PTFIWebsite
 }
