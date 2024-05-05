@@ -10,7 +10,7 @@ Before you begin, ensure you have installed the following on your development en
 - Node.js (latest stable version recommended)  
 - npm (usually installed with Node.js)  
 - Git  
-
+yada
 ## Repository Overview
 
 |Directory|Description|
