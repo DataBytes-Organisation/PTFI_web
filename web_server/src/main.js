@@ -9,6 +9,6 @@ const minimist = require('minimist');
 
 if (require.main == module) {
   const ARGS = minimist(process.argv.slice(2));
-  site = new PTFIWebsite(ARGS)
-  site.run()
+  site = new PTFIWebsite(ARGS);
+  site.run();
 }

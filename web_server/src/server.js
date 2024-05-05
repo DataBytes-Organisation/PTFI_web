@@ -131,8 +131,8 @@ class PTFIWebsite {
    */
   constructor(args) {
     var parsedArgs = this.parseArgs(args)
-    this.protocol = parsedArgs[0]
-    this.port = parsedArgs[1]
+    this.protocol = parsedArgs.protocol
+    this.port = parsedArgs.port
     this.server = new ServerBuilder().buildAndGet(this.protocol);
   }
 
@@ -141,12 +141,13 @@ class PTFIWebsite {
    * Returns result
    * 
    * @param {*} args 
-   * @returns {Array} First element is String http or https, Second being port as number
+   * @returns {Object} First element is String http or https, Second being port as number
    */
   parseArgs(args) {
-    var protocol = args.protocol || HTTP_PROTOCOL;
-    var port = args.port || DEFAULT_PORT;
-    return [protocol, port]
+    return {
+      protocol: args.protocol || HTTP_PROTOCOL,
+      port: args.port || DEFAULT_PORT
+    }
   }
 
   /**
