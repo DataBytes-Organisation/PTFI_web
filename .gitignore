@@ -1,3 +1,4 @@
 *.pem
 *ssl/
 *node_modules/
+*coverage/

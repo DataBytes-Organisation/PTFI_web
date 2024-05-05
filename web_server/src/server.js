@@ -144,6 +144,9 @@ class PTFIWebsite {
    * @returns {Object} First element is String http or https, Second being port as number
    */
   parseArgs(args) {
+    if (args == undefined) {
+      args = {}
+    }
     return {
       protocol: args.protocol || HTTP_PROTOCOL,
       port: args.port || DEFAULT_PORT
@@ -161,6 +164,7 @@ class PTFIWebsite {
 }
 
 module.exports = {
+  BuilderBase,
   HTTPServerBuilder,
   HTTPSServerBuilder,
   ServerBuilder,
