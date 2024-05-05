@@ -12,7 +12,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build_client:
+  ci_checks:
     runs-on: ubuntu-latest
     strategy:
       matrix:
