@@ -3,11 +3,11 @@ This module contains backend web server code for the PTFI website.
 */
 
 // Package imports
-const express = require('express');
 const cors = require('cors');
-const path = require('path');
-const https = require("https");
+const express = require('express');
 const fs = require("fs");
+const https = require("https");
+const path = require('path');
 
 // Constants
 const HTTP_PROTOCOL = "http";
@@ -106,7 +106,7 @@ class ServerBuilder extends BuilderBase {
     else {
       console.log(`Invalid protocol provider to ServerBuilder. Protocol: ${protocol}`);
     }
-    this.result = builder.buildAndGet()
+    this.result = builder.buildAndGet();
   }
   /**
    * Build and return http server or https server based on provided protcol
@@ -130,9 +130,9 @@ class PTFIWebsite {
    * @param {Array} args Console arguments. Expect it to contain port and protocol
    */
   constructor(args) {
-    var parsedArgs = this.parseArgs(args)
-    this.protocol = parsedArgs.protocol
-    this.port = parsedArgs.port
+    var parsedArgs = this.parseArgs(args);
+    this.protocol = parsedArgs.protocol;
+    this.port = parsedArgs.port;
     this.server = new ServerBuilder().buildAndGet(this.protocol);
   }
 
