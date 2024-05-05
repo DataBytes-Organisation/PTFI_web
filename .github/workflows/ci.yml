@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: "./web_server/package-lock.json"
     - run: |
         cd shell_scripts
         sh build_client.sh
