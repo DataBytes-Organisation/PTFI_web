@@ -2,9 +2,9 @@
   "name": "ptfiweb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage --config=./tests/unit/jest.config.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "jsonwebtoken": "^9.0.2",
     "minimist": "^1.2.8",
     "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
