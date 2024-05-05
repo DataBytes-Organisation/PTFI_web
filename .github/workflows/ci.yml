@@ -8,7 +8,6 @@ name:  Continuous integration checks
 
 on:
   push:
-    branches: [ "feature/cichecks", "main" ]
   pull_request:
     branches: [ "main" ]
 
