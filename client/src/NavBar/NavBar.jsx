@@ -1,24 +1,20 @@
 import React from 'react';
 import './NavBar.css';
-import logo from '../Images/Logo.png';
-import { HashLink as Link } from 'react-router-hash-link';
-
+import { Link } from 'react-router-dom';
+import logo from '../Images/Logo.png'; // 确保路径正确，并且logo已经正确导入
 
 function NavBar() {
     return (
         <div id="navbar">
-            {/*logo should be imported added to a  resource folder and referenced appropriately*/}
             <div id="logo-container">
-
-                {/* <img id="logo" src={require("../Images/Logo.png")} className="logo" alt="Logo"/> Jiakun Li: it could be better we use simple PTFI as the logo which looks more adevanced */}
+                {/* 使用文字作为logo */}
                 PTFI
             </div>
 
-                {/* Wrap the image with a Link component */}
-                <Link to="/#company-vision">
-                    <img id="logo" src={logo} className="logo" alt="Logo"/>
-                </Link>       </div>
-
+            {/* 使用Link组件包裹图片 */}
+            <Link to="/#company-vision">
+                <img id="logo" src={logo} className="logo" alt="Logo"/>
+            </Link>
 
             <div id="nav-links">
                 <Link to="/AboutUs" className="nav-link">About us</Link>
@@ -31,5 +27,6 @@ function NavBar() {
         </div>
     );
 }
+
 
 export default NavBar;
