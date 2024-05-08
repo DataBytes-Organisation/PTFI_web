@@ -1,7 +1,9 @@
 #back-ground{
-    background: linear-gradient(to right, #EDF5FC, #DFF0FF);
-    background-image: url('../Images/backgroundSource.png');
+    background-image: url('../Images/backgroundSource.png'), url('../Images/backgroundSource_2.png');
+    background-position: -80px 20%,100% 90%;
     background-repeat: no-repeat;
+    height: 2440px;
+    background-color: #d2e5ef;
     
 }
 
@@ -10,7 +12,7 @@
     width: 62.5vw; 
   margin: 0 auto; 
   max-width: 1200px; 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 6px 200px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 6px 200px rgba(0,0,0,0.18);
  
 }
 /* automatically tansfrom size according to the mainstream screens: 1080p 2k 4k */
@@ -115,18 +117,35 @@
     font-weight: bold;
 }
 
-#news {
-    max-width: 90%;
-    margin: auto;
-    margin-left: 400px;
+.news {
+ width: 62.5vw;
 }
-
+/* automatically tansfrom size according to the mainstream screens: 1080p 2k 4k */
+@media (min-width: 2560px) {
+    .news {
+      width: 46.875vw; 
+    }
+  }
+  
+  @media (min-width: 3840px) {
+    .news {
+      width: 31.25vw; 
+    }
+  }
 #services {
-    max-width: 90%;
-    margin: auto;
-    margin-left: -200px;
+   width: 62.5vw;
 }
-
+@media (min-width: 2560px) {
+    .services{
+      width: 46.875vw; 
+    }
+  }
+  
+  @media (min-width: 3840px) {
+    .services {
+      width: 31.25vw; 
+    }
+  }
 
 
 

@@ -1,8 +1,10 @@
 .footer-panel {
-    background: linear-gradient(to right, #93b4c4, #0b212e);
+    background: linear-gradient(to right, #708BA5, #1F4F7B);
     color: white;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    float:left;
 }
 
 .footer-logo{
@@ -20,6 +22,7 @@
 .footer-links {
     width: 88%;
     display: inline-block;
+    margin-left: 9.6%;
 }
 
 .footer-column {
