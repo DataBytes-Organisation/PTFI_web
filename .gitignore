@@ -2,3 +2,4 @@
 *ssl/
 *node_modules/
 *coverage/
+*.package_lock.json

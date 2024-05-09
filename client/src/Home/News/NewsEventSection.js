@@ -50,7 +50,7 @@ const NewsEventsSection = () => {
                 <button onClick={handlePrevNewsEvent}>&#8249;</button>
                 <div className="news-event-card">
                     <div className="content-box">
-                        <img src={newsEvents[currentNewsEvent].image} alt="News/Event" />
+                        <p src={newsEvents[currentNewsEvent].image} alt="News/Event" >News/Event</p>
                         <p id="description">{newsEvents[currentNewsEvent].description}</p>
                         <p id="date">{newsEvents[currentNewsEvent].date}</p>
                     </div>
