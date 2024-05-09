@@ -14,7 +14,7 @@ function FooterPanel() {
             <div id="logo-container">
                 {/* Wrap the image with a Link component */}
                 <Link to="/#company-vision">
-                    <img id="logo" src={logo} className="logo" alt="Logo"/>
+                
                 </Link>       </div>
             </div>
             <div className="footer-links">

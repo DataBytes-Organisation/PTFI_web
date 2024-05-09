@@ -9,6 +9,7 @@ import ServicesSection from "./Services/ServicesSection";
 
 function HomePage() {
     return (
+        <div id="back-ground">
         <div id="home-page">
             {/*section requires to be updated CSS when relevant image is included in project*/}
             <div id="company-vision">
@@ -35,10 +36,15 @@ function HomePage() {
                 <NewsEventSection/>
             </div>
 
+           
+        </div>
+
+
             <div id='services'>
                 <ServicesSection/>
             </div>
             </div>
+
         </div>
     );
 }
