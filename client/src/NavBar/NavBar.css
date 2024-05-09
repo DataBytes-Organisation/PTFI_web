@@ -21,7 +21,7 @@
   
 #nav-links {
     display: flex;
-    margin-left: 350px;
+    margin-left: 600px;
 }
   
 .nav-link {
@@ -34,7 +34,7 @@
 #join-button {
     background-color: white;
     text-decoration: none;
-    margin-left: 50px;
+    margin-left: 30px;
     margin-right: 0px;
     color: black;
     border: none;
@@ -47,7 +47,6 @@
 #join-button, #registration-button {
     display: inline-block; /* Necessary for proper padding and margins */
     padding: 10px 20px;
-    margin: 5px;
     text-decoration: none; /* Removes underline from links */
     background-color: white; /* Blue background */
     color: #0b212e; /* White text */
@@ -59,6 +58,10 @@
     background-color: #0056b3; /* Change background to white on hover */
     color: white; /* Change text color to dark blue on hover */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add shadow for better visibility */
+}
+
+#registration-button{
+    margin-right: 30px;
 }
 
 

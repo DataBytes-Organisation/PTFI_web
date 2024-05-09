@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import logo from '../Images/Logo.png';
-import { HashLink as Link } from 'react-router-hash-link';
+import {HashLink as Link} from 'react-router-hash-link';
 
 
 function NavBar() {
@@ -12,7 +12,8 @@ function NavBar() {
                 {/* Wrap the image with a Link component */}
                 <Link to="/#company-vision">
                     <img id="logo" src={logo} className="logo" alt="Logo"/>
-                </Link>       </div>
+                </Link>
+            </div>
 
             <div id="nav-links">
                 <Link to="/AboutUs" className="nav-link">About us</Link>

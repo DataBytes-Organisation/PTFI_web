@@ -90,15 +90,18 @@
 }
 
 #news {
-    max-width: 90%;
-    margin: auto;
-    margin-left: 400px;
+    display: inline-flex;
+
 }
 
 #services {
+    display: inline-flex;
+    float: right;
+}
+
+#slideshow{
     max-width: 90%;
     margin: auto;
-    margin-left: -200px;
 }
 
 
