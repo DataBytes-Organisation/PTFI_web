@@ -6,6 +6,6 @@ source $VIRTUAL_ENV/Scripts/Activate
 pip install -r test_requirements.txt
 coverage run -m pytest
 coverage report -m
-python -m pylint ./src --fail-under=8
-python -m pylint ./tests --fail-under=8
+python -m pylint --fail-under=8 ./src 
+python -m pylint --fail-under=8 ./tests 
 cd ../shell_scripts

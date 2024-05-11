@@ -14,7 +14,7 @@ https://www.geeksforgeeks.org/conftest-in-pytest/
 import pytest
 
 @pytest.fixture(name="hello_world")
-def hello_world():
+def hello_world() -> str:
     """
     Pytest fixture that returns hello world
     Parameters:
