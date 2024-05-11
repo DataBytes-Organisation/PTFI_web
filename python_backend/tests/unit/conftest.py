@@ -17,6 +17,7 @@ import pytest
 def hello_world() -> str:
     """
     Pytest fixture that returns hello world
+
     Parameters:
         None
     Returns:
