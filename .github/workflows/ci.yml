@@ -1,0 +1,35 @@
+# This workflow contains ci checks for the PTFI_web repository
+#
+# Checks:
+#  Builds client React website to ensure it compiles as expected
+#  Builds NodeJS web server and runs unit tests
+
+name:  Continuous integration checks
+
+on:
+  push:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  ci_checks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run tests Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: "./web_server/package-lock.json"
+    - run: |
+        cd shell_scripts
+        sh build_client.sh
+    - run: |
+        cd shell_scripts
+        sh build_localhost_web_server.sh
+        sh run_web_server_unit_tests.sh

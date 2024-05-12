@@ -17,6 +17,7 @@ Before you begin, ensure you have installed the following on your development en
 |---|---|
 |/|Contains the NodeJS server.|
 |/client|Contains the React application that is served by the NodeJS server.|
+|/web_server|Contains the NodeJS server that serves the React application.|
 |/shell_scripts|Contains bash shell scripts for building the server.|
 
 ## Installation Steps  
@@ -27,10 +28,10 @@ First, clone the project to your local machine:
 
 git clone  https://github.com/DataBytes-Organisation/PTFI_web.git
   
-### Install Backend Dependencies  
+### Install Backend Web Server Dependencies  
 Navigate to the project root directory and install the required backend dependencies: 
 ```  
-cd PTFI_web  
+cd PTFI_web/web_server
 npm install  
 ```  
 ### Install Frontend Dependencies  
