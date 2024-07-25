@@ -11,14 +11,7 @@ function FooterPanel() {
             <div className="footer-logo">
                  {/*logo should be imported added to a  resource folder and referenced appropriately*/}
             <div id="logo-container">
-<<<<<<< Updated upstream
-                {/* Wrap the image with a Link component */}
-                <Link to="/#company-vision">
-                    <img id="logo" src={logo} className="logo" alt="Logo"/>
-                </Link>       </div>
-=======
                 </div>
->>>>>>> Stashed changes
             </div>
             <div className="footer-links">
                 <div className="footer-column">

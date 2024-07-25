@@ -11,10 +11,6 @@
 .services {
     padding: 50px 0;
     text-align: center;
-<<<<<<< Updated upstream
-    display: inline-block;
-    float: right;
-=======
     background: #f6f6f6;
     color: var(--text-color);
     font-family: var(--body-font);
@@ -26,7 +22,6 @@
     font-family: var(--heading-font);
     color: var(--primary-color);
     animation: fadeIn 1s ease-in-out;
->>>>>>> Stashed changes
 }
 
 .services-container {
@@ -39,24 +34,12 @@
 .services-container button {
     padding: 10px 20px;
     font-size: 1rem;
-<<<<<<< Updated upstream
-    background-color: #333333;
-=======
     background-color: var(--primary-color);
->>>>>>> Stashed changes
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin: 0 10px;
-<<<<<<< Updated upstream
-}
-
-.service-card {
-    width: 500px;
-    height: 500px;
-    background-color: #f2f2f2;
-=======
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -70,7 +53,6 @@
     height: 20vw;
     background-color: rgb(93, 93, 93);
     border-radius: 20px;
->>>>>>> Stashed changes
     padding: 20px;
     margin: 20px;
     color: #fff;
@@ -91,11 +73,6 @@
     margin: auto;
 }
 
-<<<<<<< Updated upstream
-#title{
-
-}
-=======
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -110,7 +87,6 @@
         width: 90vw;
         padding: 30px 10px;
     }
->>>>>>> Stashed changes
 
     .service-card {
         width: 90vw;

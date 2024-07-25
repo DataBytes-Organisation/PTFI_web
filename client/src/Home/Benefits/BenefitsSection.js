@@ -25,11 +25,15 @@ const BenefitsSection = () => {
     return (
         <section className="benefits">
             <h2>Benefits of Choosing Us</h2>
-            <div className="benefit-container">
-                <button onClick={handlePrevBenefit}>&#8249;</button>
-                <div className="benefit-text">{benefits[currentBenefit]}</div>
-                <button onClick={handleNextBenefit}>&#8250;</button>
+                <div className="benefit-container">
+                    <button onClick={handlePrevBenefit}>&#8249;</button>
+                    <div className="benefit-card">
+                        <div className="benefit-text">{benefits[currentBenefit]}
+                    </div>
             </div>
+            <button onClick={handleNextBenefit}>&#8250;</button>
+            </div>
+
         </section>
     );
 };

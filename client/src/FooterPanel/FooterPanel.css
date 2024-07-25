@@ -1,17 +1,9 @@
-<<<<<<< Updated upstream
-.footer-panel {
-    background: linear-gradient(to right, #93b4c4, #0b212e);
-    color: white;
-    justify-content: space-between;
-    align-items: center;
-=======
 :root {
     --primary-color: #0A192F;
     --secondary-color: #172A45;
     --accent-color: #64FFDA;
     --text-color: #8892B0;
     --background-color: #F8F9FA;
->>>>>>> Stashed changes
 }
 
 .footer-panel {
@@ -43,16 +35,11 @@
 }
 
 .footer-links {
-<<<<<<< Updated upstream
-    width: 88%;
-    display: inline-block;
-=======
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
->>>>>>> Stashed changes
 }
 
 .footer-column {

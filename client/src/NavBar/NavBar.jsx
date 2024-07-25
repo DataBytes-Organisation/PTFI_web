@@ -5,8 +5,6 @@ import {HashLink as Link} from 'react-router-hash-link';
 
 
 function NavBar() {
-<<<<<<< Updated upstream
-=======
     // 使用 React 的方式处理点击事件
     function toggleMenu() {
         const menu = document.getElementById('side-menu');
@@ -17,7 +15,6 @@ function NavBar() {
         }
     }
 
->>>>>>> Stashed changes
     return (
         <div id="navbar">
             {/*logo should be imported added to a  resource folder and referenced appropriately*/}
@@ -33,8 +30,6 @@ function NavBar() {
                 <Link to="/Membership" className="nav-link">Membership</Link>
                 <Link to="/Publication" className="nav-link">Publication</Link>
                 <Link to="/Technical" className="nav-link">Technical Communities</Link>
-<<<<<<< Updated upstream
-=======
                 <Link to="/Demonstration" className="nav-link">Demonstration</Link>
             </div>
             <button id="menubtn" onClick={toggleMenu}>Menu</button>
@@ -46,10 +41,7 @@ function NavBar() {
                 <Link to="/Publication" className="nav-link">Publication</Link>
                 <Link to="/Technical" className="nav-link">Technical Communities</Link>
                 <button onClick={toggleMenu} id="closebtn" className="closebtn">&times; Close</button>
->>>>>>> Stashed changes
             </div>
-            <Link to="/Join" id="join-button">Join PTFI</Link>
-            <Link to="/Registration" id="registration-button">Registration</Link>
         </div>
     );
 }
