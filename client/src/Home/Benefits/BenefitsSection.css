@@ -1,28 +1,61 @@
+:root {
+    --primary-color: #0A192F;
+    --secondary-color: #172A45;
+    --accent-color: #64FFDA;
+    --text-color: #8892B0;
+    --background-color: #0A192F;
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
 .benefits {
     background-color: #f8f9fa;
     padding: 50px 0;
     text-align: center;
+<<<<<<< Updated upstream
+=======
+    color: var(--primary-color);
+    font-family: var(--body-font);
+>>>>>>> Stashed changes
 }
 
 .benefits h2 {
     margin-bottom: 60px;
+    font-size: 2.5rem;
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    animation: fadeIn 1s ease-in-out;
 }
 
 .benefit-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .benefit-container button {
     padding: 10px 20px;
     font-size: 1rem;
+<<<<<<< Updated upstream
     background-color: #333333;
+=======
+    background-color: var(--primary-color);
+>>>>>>> Stashed changes
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin: 0 10px;
+<<<<<<< Updated upstream
+=======
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.benefit-container button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+>>>>>>> Stashed changes
 }
 
 .benefit-text {
@@ -30,5 +63,44 @@
     width: 60%;
     height: 200px;
     font-size: 1.5rem;
+<<<<<<< Updated upstream
     margin: 0 20px;
 }
+=======
+    margin: 20px;
+    border-radius: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.benefit-text:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .benefit-text {
+        width: 90vw;
+        height: auto;
+        font-size: 1.2rem;
+        border-radius: 20px;
+    }
+    
+    .benefit-container button {
+        margin-top: 20px;
+    }
+}
+>>>>>>> Stashed changes

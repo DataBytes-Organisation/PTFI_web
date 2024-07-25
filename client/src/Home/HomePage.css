@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #home-page {
     margin-top: 64px;
 }
@@ -6,16 +7,52 @@
     background: linear-gradient(to right, #93b4c4, #0b212e);
     width: 100%;
     display: inline-block;
+=======
+:root {
+  --primary-color: #0A192F;
+  --secondary-color: #172A45;
+  --accent-color: #64FFDA;
+  --text-color: #8892B0;
+  --background-color: #F8F9FA;
+}
+
+#back-ground {
+  background-image: url('../Images/backgroundSource.png'), url('../Images/backgroundSource_2.png');
+  background-position: -80px 20%, 100% 90%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  background-attachment: fixed;
+}
+
+#home-page {
+  width: 80%;
+  max-width: 1600px;
+  margin: 64px auto 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+#company-vision {
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  padding: 60px 0;
+  color: var(--text-color);
+>>>>>>> Stashed changes
 }
 
 #company-intro {
-    width: 30%;
-    display: inline-block;
-    float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  flex-wrap: wrap;
 }
 
-
 #company-intro h1 {
+<<<<<<< Updated upstream
     text-align: left;
     font-size: 38px;
     margin: 50px 0px 20px 50px;
@@ -81,14 +118,21 @@
     margin: 10px;
     padding: 10px;
     border: 1px solid gray;
+=======
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+>>>>>>> Stashed changes
 }
 
 #intro-text {
-    margin-top: 20px;
-    margin-left: 50px;
-    font-weight: bold;
+  flex: 1;
+  padding-right: 50px;
 }
 
+<<<<<<< Updated upstream
 #news {
     display: inline-flex;
 
@@ -109,3 +153,76 @@
 
  
 
+=======
+#intro-text p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+#learn-more-button a {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+#learn-more-button a:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+#section-image {
+  flex: 1;
+  height: 400px;
+  background-image: url('../Images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+#slideshow {
+  padding: 60px 0;
+  text-align: center;
+}
+
+#news {
+  margin: 40px 0;
+}
+
+#services {
+  padding: 60px 0;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  #company-intro {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  #intro-text {
+      padding-right: 0;
+  }
+
+  #section-image {
+      width: 100%;
+      margin-top: 20px;
+  }
+}
+
+@media (min-width: 2560px) {
+  #home-page {
+      width: 60%;
+  }
+}
+
+@media (min-width: 3840px) {
+  #home-page {
+      width: 40%;
+  }
+}
+>>>>>>> Stashed changes

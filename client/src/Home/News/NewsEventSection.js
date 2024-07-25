@@ -31,7 +31,7 @@ const NewsEventsSection = () => {
             handleNextNewsEvent();
         }, 3000); // Change slides every 3000 milliseconds (3 seconds)
         return () => clearTimeout(timer); // Clean up the timer
-    }, [currentNewsEvent]); // Dependencies for useEffect
+    }, ); // Dependencies for useEffect
 
     const handlePrevNewsEvent = () => {
         setCurrentNewsEvent(

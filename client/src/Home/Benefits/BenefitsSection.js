@@ -12,7 +12,7 @@ const BenefitsSection = () => {
         }, 3000); // Change slides every 3000 milliseconds (3 seconds)
         
         return () => clearTimeout(timer); // Clear the timer when the component unmounts or updates
-    }, [currentBenefit]); // Dependency array to re-run the effect when currentBenefit changes
+    }, ); // Dependency array to re-run the effect when currentBenefit changes
 
     const handlePrevBenefit = () => {
         setCurrentBenefit((currentBenefit - 1 + benefits.length) % benefits.length);

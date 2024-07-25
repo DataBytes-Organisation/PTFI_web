@@ -1,42 +1,118 @@
+:root {
+    --primary-color: #0A192F;
+    --secondary-color: #172A45;
+    --accent-color: #64FFDA;
+    --text-color: #8892B0;
+    --background-color: #0A192F;
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
 .services {
     padding: 50px 0;
     text-align: center;
+<<<<<<< Updated upstream
     display: inline-block;
     float: right;
+=======
+    background: #f6f6f6;
+    color: var(--text-color);
+    font-family: var(--body-font);
+}
+
+.services h2 {
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    animation: fadeIn 1s ease-in-out;
+>>>>>>> Stashed changes
 }
 
 .services-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .services-container button {
     padding: 10px 20px;
     font-size: 1rem;
+<<<<<<< Updated upstream
     background-color: #333333;
+=======
+    background-color: var(--primary-color);
+>>>>>>> Stashed changes
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin: 0 10px;
+<<<<<<< Updated upstream
 }
 
 .service-card {
     width: 500px;
     height: 500px;
     background-color: #f2f2f2;
-    padding: 20px;
-    margin: 20px;
+=======
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.content-box{
+.services-container button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.service-card {
+    width: 52vw;
+    height: 20vw;
+    background-color: rgb(93, 93, 93);
+    border-radius: 20px;
+>>>>>>> Stashed changes
+    padding: 20px;
+    margin: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.service-card:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.content-box {
     text-align: center;
     max-width: 80%;
     margin: auto;
 }
 
+<<<<<<< Updated upstream
 #title{
 
 }
+=======
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
+@media (max-width: 768px) {
+    .services {
+        width: 90vw;
+        padding: 30px 10px;
+    }
+>>>>>>> Stashed changes
+
+    .service-card {
+        width: 90vw;
+    }
+}
