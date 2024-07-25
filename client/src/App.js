@@ -15,6 +15,7 @@ import ContactPage from './Contact/ContactPage';
 import TermsAndConditions from "./Terms&Conditions/Terms&Conditions";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import RegistrationPage from "./Registration/Registraion";
+import DSImplementaion from "./DataScienceCodeDemonstration/DSImplementation"
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
                 <Route path='/Terms&Conditions' element={<TermsAndConditions/>}/>
                 <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
                 <Route path='/Registration' element={<RegistrationPage/>}/>
+                <Route path='/Demonstration' element={<DSImplementaion/>}/>
             </Routes>
             <FooterPanel/>
         </div>
