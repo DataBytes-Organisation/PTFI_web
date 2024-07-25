@@ -31,7 +31,7 @@ const NewsEventsSection = () => {
             handleNextNewsEvent();
         }, 3000); // Change slides every 3000 milliseconds (3 seconds)
         return () => clearTimeout(timer); // Clean up the timer
-    }, [currentNewsEvent]); // Dependencies for useEffect
+    }, ); // Dependencies for useEffect
 
     const handlePrevNewsEvent = () => {
         setCurrentNewsEvent(
@@ -50,7 +50,7 @@ const NewsEventsSection = () => {
                 <button onClick={handlePrevNewsEvent}>&#8249;</button>
                 <div className="news-event-card">
                     <div className="content-box">
-                        <p src={newsEvents[currentNewsEvent].image} alt="News/Event" >News/Event</p>
+                        <img src={newsEvents[currentNewsEvent].image} alt="News/Event" />
                         <p id="description">{newsEvents[currentNewsEvent].description}</p>
                         <p id="date">{newsEvents[currentNewsEvent].date}</p>
                     </div>

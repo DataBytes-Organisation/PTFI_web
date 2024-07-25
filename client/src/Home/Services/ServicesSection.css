@@ -1,46 +1,94 @@
+:root {
+    --primary-color: #0A192F;
+    --secondary-color: #172A45;
+    --accent-color: #64FFDA;
+    --text-color: #8892B0;
+    --background-color: #0A192F;
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
 .services {
     padding: 50px 0;
     text-align: center;
-    display: inline-block;
-    float: right;;
-    width:62.5vw;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 6px 200px rgba(0,0,0,0.12);
-    backdrop-filter: blur(15px);
-   
+    background: #f6f6f6;
+    color: var(--text-color);
+    font-family: var(--body-font);
+}
+
+.services h2 {
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    animation: fadeIn 1s ease-in-out;
 }
 
 .services-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .services-container button {
+    padding: 10px 20px;
     font-size: 1rem;
-    background-color: #181a1c;
+    background-color: var(--primary-color);
     color: #fff;
     border: none;
-    border-radius: 20px;
+    border-radius: 4px;
     cursor: pointer;
-    margin: 0px 10px;
-    width: 10px;
-    
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.services-container button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
 }
 
 .service-card {
     width: 52vw;
     height: 20vw;
-    background-color: #595959;
-    border-radius: 50px;
+    background-color: rgb(93, 93, 93);
+    border-radius: 20px;
     padding: 20px;
     margin: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.content-box{
+.service-card:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.content-box {
     text-align: center;
     max-width: 80%;
     margin: auto;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
+@media (max-width: 768px) {
+    .services {
+        width: 90vw;
+        padding: 30px 10px;
+    }
 
+    .service-card {
+        width: 90vw;
+    }
+}
