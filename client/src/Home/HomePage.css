@@ -1,153 +1,126 @@
-#back-ground{
-    background-image: url('../Images/backgroundSource.png'), url('../Images/backgroundSource_2.png');
-    background-position: -80px 20%,100% 90%;
-    background-repeat: no-repeat;
-    height: 2440px;
-    background-color: #d2e5ef;
-    
+:root {
+  --primary-color: #0A192F;
+  --secondary-color: #172A45;
+  --accent-color: #64FFDA;
+  --text-color: #8892B0;
+  --background-color: #F8F9FA;
+}
+
+#back-ground {
+  background-image: url('../Images/backgroundSource.png'), url('../Images/backgroundSource_2.png');
+  background-position: -80px 20%, 100% 90%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  background-attachment: fixed;
 }
 
 #home-page {
-    margin-top: 64px;
-    width: 62.5vw; 
-  margin: 0 auto; 
-  max-width: 1200px; 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 6px 200px rgba(0,0,0,0.18);
- 
+  width: 80%;
+  max-width: 1600px;
+  margin: 64px auto 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
 }
-/* automatically tansfrom size according to the mainstream screens: 1080p 2k 4k */
-@media (min-width: 2560px) {
-    .main-content {
-      width: 46.875vw; 
-    }
-  }
-  
-  @media (min-width: 3840px) {
-    .main-content {
-      width: 31.25vw; 
-    }
-  }
+
 #company-vision {
-    background: linear-gradient(to right, #708BA5, #1F4F7B);
-    width: 100%;
-    display: inline-block;
-    margin-top: 70px;
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  padding: 60px 0;
+  color: var(--text-color);
 }
 
 #company-intro {
-    width: 30%;
-    display: inline-block;
-    float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  flex-wrap: wrap;
 }
-
 
 #company-intro h1 {
-    text-align: left;
-    font-size: 38px;
-    margin: 50px 0px 20px 50px;
-}
-
-#intro-text p {
-    text-align: left;
-}
-
-#learn-more-button a {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#learn-more-button a:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-
-/*button style applied to anchor of link*/
-#learn-more-button a {
-    padding: 15px;
-    border-radius: 32px;
-
-    background-color: #0b212e;
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    margin-top:100px;
-}
-
-
-#our-services {
-    text-align: center;
-}
-
-#section-image {
-    display: inline-block;
-    float: right;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    margin-right: 30px;
-    background-image: url('../Images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    width: 60%;
-}
-
-#service-boxes {
-    margin-left: 300px;
-    margin-right: 300px;
-    display: flex;
-    justify-content: space-around;
-}
-
-  
-.service-box {
-    flex: 1;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid gray;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 #intro-text {
-    margin-top: 20px;
-    margin-left: 50px;
-    font-weight: bold;
+  flex: 1;
+  padding-right: 50px;
 }
 
-.news {
- width: 62.5vw;
+#intro-text p {
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
-/* automatically tansfrom size according to the mainstream screens: 1080p 2k 4k */
-@media (min-width: 2560px) {
-    .news {
-      width: 46.875vw; 
-    }
-  }
-  
-  @media (min-width: 3840px) {
-    .news {
-      width: 31.25vw; 
-    }
-  }
+
+#learn-more-button a {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+#learn-more-button a:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+#section-image {
+  flex: 1;
+  height: 400px;
+  background-image: url('../Images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+#slideshow {
+  padding: 60px 0;
+  text-align: center;
+}
+
+#news {
+  margin: 40px 0;
+}
+
 #services {
-   width: 62.5vw;
+  padding: 60px 0;
+  text-align: center;
 }
+
+@media (max-width: 1024px) {
+  #company-intro {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  #intro-text {
+      padding-right: 0;
+  }
+
+  #section-image {
+      width: 100%;
+      margin-top: 20px;
+  }
+}
+
 @media (min-width: 2560px) {
-    .services{
-      width: 46.875vw; 
-    }
+  #home-page {
+      width: 60%;
   }
-  
-  @media (min-width: 3840px) {
-    .services {
-      width: 31.25vw; 
-    }
+}
+
+@media (min-width: 3840px) {
+  #home-page {
+      width: 40%;
   }
-
-
-
- 
-
+}

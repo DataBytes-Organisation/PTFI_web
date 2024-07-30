@@ -3,6 +3,7 @@
     margin-top: 64px;
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 #registration-background {
@@ -153,7 +154,7 @@ button[type="submit"]:hover {
 }
 
 .social-login button {
-    width: 50%;
+    width: 63%;
     height: 42px;
     margin: 10px 0; /* Standard margin around buttons */
     padding: 0.5rem 1rem;
@@ -167,7 +168,6 @@ button[type="submit"]:hover {
     align-items: center; /* Vertical alignment */
     justify-content: center; /* Horizontal alignment */
     margin-bottom: 20px;
-    margin-left:-15px;
 }
 
 .registration-text  h6 {
