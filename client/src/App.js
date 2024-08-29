@@ -15,7 +15,7 @@ import ContactPage from './Contact/ContactPage';
 import TermsAndConditions from "./Terms&Conditions/Terms&Conditions";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import RegistrationPage from "./Registration/Registraion";
-import DSImplementaion from "./DataScienceCodeDemonstration/DSImplementation"
+import DSImplementaion from "./HEDemonstration/DSImplementation"
 
 function App() {
     return (

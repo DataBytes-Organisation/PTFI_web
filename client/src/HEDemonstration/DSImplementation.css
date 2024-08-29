@@ -1,0 +1,114 @@
+:root {
+  --primary-color: #0A192F;
+  --secondary-color: #172A45;
+  --accent-color: #64FFDA;
+  --text-color: #8892B0;
+  --background-color: #F8F9FA;
+}
+
+.suspect-matching-list {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 128px;
+  margin-bottom: 64px;
+  border-radius: 32px;
+  padding: 30px;
+  color: var(--primary-color);
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.match-types {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.file-upload-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.file-upload-box {
+  border: 2px dashed var(--text-color); /* Use the correct variable syntax */
+  padding: 20px;
+  width: 40%;
+}
+
+.choose-file-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+.match-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; /* Add some space above the match button */
+}
+
+.triangle {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 5;
+  align-items: center;
+  transition: fill 0.3s ease, stroke 0.3s ease; /* Add smooth transition for hover effect */
+}
+
+button:hover .triangle {
+  fill: #e0e0e0; /* Hover: slightly darker fill color */
+  stroke: #333;  /* Hover: darker border color */
+}
+
+
+
+.result-section {
+  margin-bottom: 20px;
+}
+
+.result-box {
+  border: 3px solid #ccc;
+  padding: 20px;
+  min-height: 100px;
+  text-align: left;
+}
+
+.save-button {
+  margin-bottom: 20px;
+  padding: 5px 20px;
+}
+
+.generate-data-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.data-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  gap: 10px;
+}
+
+.data-input input {
+  width: 100%;
+  padding: 5px;
+}
+
+.data-input button {
+  padding: 5px 20px;
+}
