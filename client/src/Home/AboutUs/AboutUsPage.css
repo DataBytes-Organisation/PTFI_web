@@ -1,0 +1,92 @@
+:root {
+    --primary-color: #0A192F;
+    --secondary-color: #172A45;
+    --accent-color: #64FFDA;
+    --text-color: #8892B0;
+    --background-color: #0A192F;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    margin-top: 64px;
+    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('../Images/background.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    animation: slideInDown 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    animation: slideInUp 1s ease-in-out;
+}
+
+.hero button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.hero button:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

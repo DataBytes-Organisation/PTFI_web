@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #0A192F;
+    --secondary-color: #172A45;
+    --accent-color: #64FFDA;
+    --text-color: #8892B0;
+    --background-color: #F8F9FA;
+}
+
+.footer-panel {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 60px 0 30px;
+    width: 100%;
+    float:left;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-logo {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-column {
+    width: calc(25% - 20px);
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-column-special {
+    width: auto;
+}
+
+.footer-column-special img {
+    width: 32px;
+    height: 32px;
+    margin: 10px 10px 0 0;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+
+.footer-column-special img:hover {
+    opacity: 0.8;
+}
+
+.contact-us-button {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+}
+
+.contact-us-button:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+.rights {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#line {
+    width: 50%;
+    height: 1px;
+    background-color: var(--text-color);
+    margin: 20px auto;
+    opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+    .footer-column,
+    .footer-column-special {
+        width: 100%;
+    }
+
+    .footer-logo {
+        margin: 0 auto 30px;
+    }
+}

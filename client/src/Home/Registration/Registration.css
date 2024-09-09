@@ -1,0 +1,179 @@
+.registration-page {
+    width: 100%;
+    margin-top: 64px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#registration-background {
+    border-radius: 8px;
+    width: 50%;
+    background-color: #f2f2f2;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+input[type="tel"],
+input[type="email"] {
+    padding: 10px;
+    width: 35%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+input[type="occupation"],
+input[type="Address"] {
+    padding: 10px;
+    width: 75%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+input[type="checkbox"] {
+
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    width: 50%;
+    height: 42px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 1);
+    color: #fdfbfb;
+    cursor: pointer;
+    margin: 30px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #939090;
+}
+
+.social-login button:hover {
+    background-color: #939090;
+}
+
+.or-separator {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #888;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    }
+
+    
+.social-login button {
+    width: 50%;
+    height: 42px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin: 5px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.registration-text {
+    text-align: left;
+    margin-left: 80px;
+    margin-bottom: 30px;
+}
+
+.registration-text h1 {
+    color: rgba(0, 0, 0, 1);
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    padding-right: 0;
+    width: 10%;
+    display: inline-block;
+}
+
+.registration-text h2 {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    margin-top: 0px;
+    padding: 0;
+
+}
+
+.registration-text h6 {
+    color: rgba(0, 0, 0, 1);
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 1px;
+    margin-left: 20px;
+}
+
+#Google {
+    height: 16px;  /* Set a fixed height for both icons */
+    width: 16px;   /* Allow the width to adjust based on the aspect ratio */
+}
+
+#Microsoft {
+    height: 16px;  /* Set a fixed height for both icons */
+    width: 16px;   /* Allow the width to adjust based on the aspect ratio */
+}
+
+.social-login{
+    width: 80%; /* Adjusted to not span the entire width of the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adds space between text and buttons */
+    margin-left: 90px;
+    margin-bottom: 10px;
+}
+
+.social-login button img {
+    margin-right: 10px; /* Space between the icon and the text */
+    height: 24px; /* Unified height for all icons */
+    width: auto; /* Width adjusts based on aspect ratio */
+}
+
+.social-login button {
+    width: 63%;
+    height: 42px;
+    margin: 10px 0; /* Standard margin around buttons */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    display: flex; /* Use flex to center align the image and text */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+    margin-bottom: 20px;
+}
+
+.registration-text  h6 {
+    color: rgba(0, 0, 0, 1);
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 1px;
+    margin-left: 35px;
+}

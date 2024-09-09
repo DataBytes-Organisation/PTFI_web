@@ -1,0 +1,103 @@
+#JoinPage {
+    margin-top: 64px;
+    padding: 60px 0px;
+    width: 100%;
+}
+
+#background {
+    border-radius: 32px;
+    width: 50%;
+    height: 475px;
+    background-color: #f2f2f2;
+    margin: auto;
+}
+
+.text {
+    text-align: left;
+    width: 80%;
+    margin: auto;
+}
+
+.text h1 {
+    color: rgba(0, 0, 0, 1);
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    padding-right: 0;
+    width: 10%;
+    display: inline-block;
+}
+
+.text h2 {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    margin-top: 0px;
+    padding: 0;
+
+}
+
+.text h6 {
+    color: rgba(0, 0, 0, 1);
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 1px;
+    margin-left: 35px;
+}
+
+
+.button-external button {
+    width: 50%;
+    height: 42px;
+    margin: 25px 0; /* Standard margin around buttons */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    display: flex; /* Use flex to center align the image and text */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+    
+}
+
+.button-external button img {
+    margin-right: 10px; /* Space between the icon and the text */
+    height: 24px; /* Unified height for all icons */
+    width: auto; /* Width adjusts based on aspect ratio */
+}
+
+.button-external button:hover {
+    background-color: #939090;
+}
+
+.button-external span {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #888;
+}
+
+#Google {
+    height: 16px;  /* Set a fixed height for both icons */
+    width: 16px;   /* Allow the width to adjust based on the aspect ratio */
+}
+
+#Microsoft {
+    height: 24px;  /* Set a fixed height for both icons */
+    width: 24px;   /* Allow the width to adjust based on the aspect ratio */
+}
+
+.button-external{
+    width: 80%; /* Adjusted to not span the entire width of the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adds space between text and buttons */
+    margin-left: 90px;
+    margin-bottom: 10px;
+}
+
+
+
