@@ -3,16 +3,7 @@
     --secondary-color: #172A45;
     --accent-color: #64FFDA;
     --text-color: #8892B0;
-    --background-color: #0A192F;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    --background-color: #F8F9FA;
 }
 
 .hero {
@@ -44,11 +35,15 @@ body {
     animation: slideInUp 1s ease-in-out;
 }
 
+.hero button a {
+    color: var(--accent-color);
+}
+
 .hero button {
     padding: 12px 24px;
     font-size: 1.2rem;
     background-color: transparent;
-    color: var(--accent-color);
+    color: var(--accent-color) !important;
     border: 2px solid var(--accent-color);
     border-radius: 4px;
     cursor: pointer;
@@ -60,33 +55,39 @@ body {
     transform: translateY(-2px);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+#aboutus-background {
+    background-image: url('../Images/backgroundSource.png'), url('../Images/backgroundSource_2.png');
+    background-position: -80px 20%, 100% 90%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    background-attachment: fixed;
 }
 
-@keyframes slideInDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+#aboutus-slideshow {
+    padding: 60px 0;
+    text-align: center;
 }
 
-@keyframes slideInUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
+#aboutus-news,
+#aboutus-benefits,
+#aboutus-partners,
+#aboutus-subscribe {
+    margin: 40px 0;
+}
+
+@media (max-width: 1024px) {
+    #aboutus-intro {
+        flex-direction: column;
+        text-align: center;
     }
-    to {
-        transform: translateY(0);
-        opacity: 1;
+  
+    #intro-text {
+        padding-right: 0;
+    }
+  
+    #section-image {
+        width: 100%;
+        margin-top: 20px;
     }
 }
