@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './SecureSection.css';
 
 const SecureSection = () => {
@@ -13,7 +13,8 @@ const SecureSection = () => {
                 </button>
             </div>
             <div >
-                <img className='Overview_icon_image1' src={require('../../Images/Overview_icon1.png')} alt="Cyber security illustration" />
+                {/*COMMENTED OUT BECAUSE NO SUCH RESOURCE EXISTS IN IMAGE FOLDER*/}
+                {/*<img className='Overview_icon_image1' src={require('../../Images/Overview_icon1.png')} alt="Cyber security illustration" />*/}
             </div>
         </section>
     );

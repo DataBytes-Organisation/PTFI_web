@@ -1,0 +1,43 @@
+.fl-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 80px;
+  }
+  
+  p {
+    text-align: justify;
+    margin-bottom: 20px;
+    color: black;
+  }
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+  
+iframe {
+    border: none;
+    border-radius: 8px;
+    width: 800px; 
+    height: 450px; 
+    /*make noninteractive (just a static looping*/
+    pointer-events: none; 
+}
+  
+.fl-demonstration-container {
+    font-weight: bold; 
+    font-size: 24px; 
+}

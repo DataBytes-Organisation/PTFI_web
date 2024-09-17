@@ -15,7 +15,9 @@ import ContactPage from './Contact/ContactPage';
 import TermsAndConditions from "./Terms&Conditions/Terms&Conditions";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import RegistrationPage from "./Registration/Registraion";
-import DSImplementaion from "./HEDemonstration/DSImplementation"
+import DSImplementaion from "./ListMatchingDemonstration/DSImplementation"
+import HEDemo from './HEDemonstration/HEDemo';
+import FLDemo from './FLDemonstration/FLDemo';
 
 function App() {
     return (
@@ -35,6 +37,8 @@ function App() {
                 <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
                 <Route path='/Registration' element={<RegistrationPage/>}/>
                 <Route path='/Demonstration' element={<DSImplementaion/>}/>
+                <Route path='/HEDemonstration' element = {<HEDemo/>}/>
+                <Route path='/FLDemonstration' element = {<FLDemo/>}/>
             </Routes>
             <FooterPanel/>
         </div>
