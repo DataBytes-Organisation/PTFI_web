@@ -13,8 +13,7 @@ const SecureSection = () => {
                 </button>
             </div>
             <div >
-                {/*COMMENTED OUT BECAUSE NO SUCH RESOURCE EXISTS IN IMAGE FOLDER*/}
-                {/*<img className='Overview_icon_image1' src={require('../../Images/Overview_icon1.png')} alt="Cyber security illustration" />*/}
+                <img className='Overview_icon_image1' src={require('../../Images/Overview_icon1.png')} alt="Cyber security illustration" />
             </div>
         </section>
     );

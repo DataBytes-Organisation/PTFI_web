@@ -27,12 +27,15 @@ function NavBar() {
 
             <div id="nav-links">
                 <Link to="/AboutUs" className="nav-link">About us</Link>
-                <Link to="/Membership" className="nav-link">Membership</Link>
-                <Link to="/Publication" className="nav-link">Publication</Link>
-                <Link to="/Technical" className="nav-link">Technical Communities</Link>
+                {/*<Link to="/Membership" className="nav-link">Membership</Link>*/}
+                {/*<Link to="/Publication" className="nav-link">Publication</Link>*/}
+                {/*<Link to="/Technical" className="nav-link">Technical Communities</Link>*/}
                 <Link to="/Demonstration" className="nav-link">List Matching</Link>
-                <Link to="/HEDemonstration" className="nav-link">Homomorphic Encryption</Link>
-                <Link to="/FLDemonstration" className="nav-link">FL Demo</Link>
+                <Link to="/HEOverview" className="nav-link">Homomorphic Encryption</Link>
+                <Link to="/FLOverview" className="nav-link">Federated Learning</Link>
+                <Link to="/DPOverview" className='nav-link'>Differential Privacy</Link>
+                <Link to='/SMPCOverview' className='nav-link'>Secure Multi-Party Computation</Link>
+                
             </div>
             <button id="menubtn" onClick={toggleMenu}>Menu</button>
             <div id="side-menu" className="side-nav">

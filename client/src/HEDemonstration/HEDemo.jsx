@@ -59,26 +59,14 @@ const HEDemo = () => {
 
   return (
     <div className="he-container">
-        <h1>Introduction to Homomorphic Encryption</h1>
-        <p>
-            Homomorphic encryption is an exciting privacy technology that allows computations to be performed on encrypted data without needing to decrypt it first. 
-            This is useful when sensitive data (like financial transactions, or personal information) needs to be processed securely by third-party services. 
-            For instance, imagine you want a cloud service to perform calculations on your data but without giving them access to the raw information—homomorphic encryption enables that.
-            This is particularly useful in our use case, as financial information can be collated, operated on, and the results interpreted without ever compromising the privacy of the 
-            users whose data was processed.
-        </p>
-        <p>
-            With homomorphic encryption, even if someone intercepts your encrypted data, they can't understand it. Yet, authorized parties can perform operations on this 
-            encrypted data, and when decrypted, the result will match what would have been obtained if the operation had been done on the original data.
-        </p>
-        <h1>Demonstrating the concept:</h1>
-        <p>
-            While true homorphic encryption is a complicated mathematical process, it uses a polynomial function (think back to high school algebra when learning quadratics) in order
-            to encrypt the data. Consider the following demonstration, which uses a simplified polynomial in order to demonstrate the concept. You can input any two numbers,
-            encrypt them, then add them and decrypt the sum. You can see that performing this operation, we can determine the sum of these two input variables without ever having to 
-            deal with their non-encrypted counterparts, thus demonstrating how we can perform operations on encrypted data to obtain meaningful results, all the while retaining
-            the privacy of the data holders.
-        </p>
+      <h1>Demonstrating the concept:</h1>
+      <p>
+        While true homorphic encryption is a complicated mathematical process, it uses a polynomial function (think back to high school algebra when learning quadratics) in order
+        to encrypt the data. Consider the following demonstration, which uses a simplified polynomial in order to demonstrate the concept. You can input any two numbers,
+        encrypt them, then add them and decrypt the sum. You can see that performing this operation, we can determine the sum of these two input variables without ever having to 
+        deal with their non-encrypted counterparts, thus demonstrating how we can perform operations on encrypted data to obtain meaningful results, all the while retaining
+        the privacy of the data holders.
+      </p>
 
       <div className="input-container">
         <input
