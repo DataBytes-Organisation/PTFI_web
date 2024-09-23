@@ -36,7 +36,8 @@ const InsightsSection = () => {
                     >
                         <div className="content-box1">
                             <p className="description">{insight.description}</p>
-                            <a href="#" className="link">{insight.link}</a>
+                            {/*commented out invalid anchor tag*/}
+                            {/*<a href="#" className="link">{insight.link}</a>*/}
                         </div>
                     </div>
                 ))}

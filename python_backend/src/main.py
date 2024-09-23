@@ -337,5 +337,23 @@ async def generate_transaction_data(request: DataRequest):
 
     return StreamingResponse(io.BytesIO(csv_file), media_type="text/csv", headers={"Content-Disposition": "attachment;filename=transactions.csv"})
 
+
+#FOR HE DEMO:
+class EncryptRequest(BaseModel):
+    value: int
+
+class DecryptRequest(BaseModel):
+    encrypted_value: int
+
+@app.post("/encrypt")
+def encrypt(request: EncryptRequest):
+    encrypted_value = 4 * request.value + 4
+    return {"encrypted_value": encrypted_value}
+
+@app.post("/decrypt")
+def decrypt(request: DecryptRequest):
+    decrypted_value = (request.encrypted_value - 8) / 4
+    return {"decrypted_value": decrypted_value}
+
 #SERVER TERMINAL COMMAND = python -m uvicorn main:app --reload --port 3003 
 #OR ANY PORT NUMBER, BUT MUST BE SAME AS URL USED IN MATCH HANDLER FUNCTION IN REACT APP

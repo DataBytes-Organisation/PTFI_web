@@ -15,7 +15,13 @@ import ContactPage from './Contact/ContactPage';
 import TermsAndConditions from "./Terms&Conditions/Terms&Conditions";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import RegistrationPage from "./Registration/Registraion";
-import DSImplementaion from "./HEDemonstration/DSImplementation"
+import DSImplementaion from "./ListMatchingDemonstration/DSImplementation"
+import HEDemo from './HEDemonstration/HEDemo';
+import FLDemo from './FLDemonstration/FLDemo';
+import FLOverview from './FLOverview/FLOverview';
+import HEOverview from './HEOverview/HEOverview';
+import DPOverview from './DPOverview/DPOverview';
+import SMPCOverview from './SMPCOverview/SMPCOverview';
 
 function App() {
     return (
@@ -35,6 +41,13 @@ function App() {
                 <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
                 <Route path='/Registration' element={<RegistrationPage/>}/>
                 <Route path='/Demonstration' element={<DSImplementaion/>}/>
+                <Route path='/HEDemonstration' element = {<HEDemo/>}/>
+                <Route path='/FLDemonstration' element = {<FLDemo/>}/>
+                <Route path='/FLOverview' element = {<FLOverview/>}/>
+                <Route path='/HEOverview' element = {<HEOverview/>}/>
+                <Route path='/DPOverview' element = {<DPOverview/>}/>
+                <Route path='/SMPCOverview' element = {<SMPCOverview/>}/>
+
             </Routes>
             <FooterPanel/>
         </div>
