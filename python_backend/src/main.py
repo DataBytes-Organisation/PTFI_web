@@ -16,10 +16,22 @@ from datetime import datetime, timedelta
 import random
 import uuid
 
+import pickle
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+import flwr as fl
+import multiprocessing as mp
+import os
+
 #from Pyfhel import Pyfhel
-
-
-
+#FOR TOKTAM ALTERNATE HE SOLUTION
+from sympy import Symbol, expand
+#import tenseal as ts
+#AGAIN, PROBLEM WITH THE DEPENDENCY:
+#https://pypi.org/project/tenseal/
+#ERROR: Could not find a version that satisfies the requirement tenseal (from versions: none)
+#ERROR: No matching distribution found for tenseal
 
 app = FastAPI()
 
@@ -112,14 +124,54 @@ def listmatch_hash(tar, sus):
     return matches
 
 #homomorphic matching for list
-def listmatch_HE(tar, sus):
+#def listmatch_HE(tar, sus):
+#    matches = []
+#    for l in range(0, (len(sus))):
+#        for t in range(0, (len(tar))):
+#                match_res = match_HE(tar[t], sus[l])
+#                if match_res:
+#                    matches.append(match_res)
+#    return matches    
+
+
+#TOKTAM SOLUTION FOR HE (SEE ABOVE FOR DEPENCY ISSUES USING tenseal):
+def homomorphic_search(suspicious_list, shared_list):
+    # Initialize TenSEAL context with a higher scale
+    context = ts.context(ts.SCHEME_TYPE.CKKS, 8192, 7)
+    scale = 2 ** 40  # to be adjusted if needed
+
+    # Create polynomial from suspicious list
+    polynomial = create_polynomial(suspicious_list)
+    # print(f"Polynomial: {polynomial}")
+
+    # Create matches list
     matches = []
-    for l in range(0, (len(sus))):
-        for t in range(0, (len(tar))):
-                match_res = match_HE(tar[t], sus[l])
-                if match_res:
-                    matches.append(match_res)
-    return matches    
+
+    # Evaluate the polynomial at each entry in the shared list
+    for shared in shared_list:
+        encrypted_shared = ts.ckks_vector(context, [shared], scale)
+        result = ts.ckks_vector(context, [0], scale)
+
+        # Evaluate the polynomial at the encrypted value
+        for i, coef in enumerate(polynomial.as_coefficients_dict().values()):
+            encrypted_coef = ts.ckks_vector(context, [coef], scale)
+            term = encrypted_shared ** i * encrypted_coef
+            result += term
+
+        decrypted_result = result.decrypt()[0]
+
+        # may be needed to debugging
+        # print(f"Evaluating for {shared}: Decrypted Result = {decrypted_result}")
+
+        # Direct evaluation for comparison
+        direct_result = evaluate_polynomial(polynomial, shared)
+        # print(f"Directly evaluating for {shared}: Result = {direct_result}")
+
+        # Check for match with a tight threshold
+        if abs(decrypted_result) < 1e-7 or abs(direct_result) < 1e-7:  # Adjusted check
+            matches.append(shared)
+
+    return matches
 
 #changed to take parameter int which determines fraud data generation rather than arbitrary value
 #THERE IS AN ERROR IN DATA SCIENCE TEAMS PROVIDED CODE: AttributeError: 'Generator' object has no attribute 'datetime'
@@ -255,6 +307,20 @@ async def find_matches_hashed(suspect_file: UploadFile = File(...), customer_fil
 
     return {"matches": matches}
 
+#TOKTAMS SOLUTION FOR HE MATCHING (AGAIN, SEE IMPORT SECTION FOR DEPENDENCY ISSUES):
+
+def create_polynomial(suspicious_list):
+    x = Symbol('x')
+    polynomial = 1
+    for s in suspicious_list:
+        polynomial *= (x - s)
+    return expand(polynomial)
+
+
+def evaluate_polynomial(polynomial, value):
+    return polynomial.evalf(subs={Symbol('x'): value})
+
+
 @app.post("/findMatchesHomomorphic")
 async def find_matches_HE(suspect_file: UploadFile = File(...), customer_file: UploadFile = File(...)):
     suspect_data = (await suspect_file.read()).decode('utf-8')
@@ -269,7 +335,7 @@ async def find_matches_HE(suspect_file: UploadFile = File(...), customer_file: U
     customers = df0['ID'].to_list()
     suspects = df1['ID'].to_list()
 
-    matches = listmatch_HE(customers, suspects)
+    matches = homomorphic_search(customers, suspects)
 
     return {"matches": matches}
 
@@ -354,6 +420,159 @@ def encrypt(request: EncryptRequest):
 def decrypt(request: DecryptRequest):
     decrypted_value = (request.encrypted_value - 8) / 4
     return {"decrypted_value": decrypted_value}
+
+
+#CODE FOR FL DEMONSTRATION PORTION:
+#I Have been working with this code provided by the data science team, which now runs and provides a meaningful output, but encounters and raises some errors. 
+#While these are non fatal errors, and values are returned and displayed allong with 200OK response, this should be refined in future
+class FLInput(BaseModel):
+    num_records: int
+    fraud_percentage: float
+    num_clients: int
+
+def generate_credit_card_data(num_records, fraud_percentage):
+    data = {
+        "ID": range(1, num_records + 1),
+        "Transaction Date": [fake.date_this_year() for _ in range(num_records)],
+        "Credit Card Number": [fake.credit_card_number(card_type=None) for _ in range(num_records)],
+        "Merchant": [fake.company() for _ in range(num_records)],
+        "Transaction Amount": [round(random.uniform(1, 1000), 2) for _ in range(num_records)],
+        "Transaction Type": [random.choice(["POS", "Online", "Direct Debit"]) for _ in range(num_records)],
+        "Account Balance": [round(random.uniform(0, 100000), 2) for _ in range(num_records)],
+        "Customer Age": [random.randint(18, 90) for _ in range(num_records)],
+        "Customer Gender": [random.choice(["Male", "Female"]) for _ in range(num_records)],
+        "Is Fraud": [1 if random.random() < fraud_percentage else 0 for _ in range(num_records)]
+    }
+    return pd.DataFrame(data)
+
+def preprocess_data(df):
+    df = df.drop(columns=["ID", "Transaction Date", "Credit Card Number", "Merchant"])
+    le_transaction_type = LabelEncoder()
+    le_customer_gender = LabelEncoder()
+    df["Transaction Type"] = le_transaction_type.fit_transform(df["Transaction Type"])
+    df["Customer Gender"] = le_customer_gender.fit_transform(df["Customer Gender"])
+    scaler = StandardScaler()
+    df[["Transaction Amount", "Account Balance", "Customer Age"]] = scaler.fit_transform(df[["Transaction Amount", "Account Balance", "Customer Age"]])
+    X = df.drop(columns=["Is Fraud"])
+    y = df["Is Fraud"]
+    return X, y
+
+class CreditCardClient(fl.client.NumPyClient):
+    def __init__(self, model, x_train, y_train, x_test, y_test):
+        self.model = model
+        self.x_train = x_train
+        self.y_train = y_train
+        self.x_test = x_test
+        self.y_test = y_test
+
+    def get_parameters(self, config=None):
+        return [self.model.coef_.ravel(), self.model.intercept_]
+
+    def fit(self, parameters, config):
+        self.model.coef_ = np.array(parameters[0]).reshape(1, -1)
+        self.model.intercept_ = np.array(parameters[1])
+        self.model.fit(self.x_train, self.y_train)
+        return [self.model.coef_.ravel(), self.model.intercept_], len(self.x_train), {}
+
+    def evaluate(self, parameters, config):
+        self.model.coef_ = np.array(parameters[0]).reshape(1, -1)
+        self.model.intercept_ = np.array(parameters[1])
+        predictions = self.model.predict(self.x_test)
+        accuracy = accuracy_score(self.y_test, predictions)
+        return 1 - accuracy, len(self.x_test), {"accuracy": accuracy}
+
+def start_fl_server(num_rounds=3):
+    strategy = fl.server.strategy.FedAvg()
+    fl.server.start_server(server_address="127.0.0.1:8081", strategy=strategy, config={"num_rounds": num_rounds})
+
+def start_fl_client(client_id):
+    with open(f'client_{client_id}_data.pkl', 'rb') as f:
+        X, y = pickle.load(f)
+
+    model = LogisticRegression()
+    split_index = int(0.8 * len(X))
+    x_train, x_test = X[:split_index], X[split_index:]
+    y_train, y_test = y[:split_index], y[split_index:]
+
+    client = CreditCardClient(model, x_train, y_train, x_test, y_test)
+    fl.client.start_numpy_client(server_address="127.0.0.1:8081", client=client)
+
+def run_federated_learning(num_clients, num_rounds=3):
+    try:
+        mp.set_start_method("spawn")
+    except RuntimeError:
+        pass
+
+    server_process = mp.Process(target=start_fl_server, args=(num_rounds,))
+    server_process.start()
+
+    client_processes = []
+    for i in range(num_clients):
+        p = mp.Process(target=start_fl_client, args=(i,))
+        client_processes.append(p)
+        p.start()
+
+    for p in client_processes:
+        p.join()
+
+    server_process.terminate()
+
+def centralized_training_evaluation(X, y):
+    scaler = StandardScaler()
+    X = scaler.fit_transform(X)
+
+    model = LogisticRegression()
+    model.fit(X, y)
+
+    predictions = model.predict(X)
+    accuracy = accuracy_score(y, predictions)
+    return accuracy
+
+@app.post("/run_fl")
+def run_federated_learning_endpoint(input_data: FLInput):
+    num_records = input_data.num_records
+    fraud_percentage = input_data.fraud_percentage
+    num_clients = input_data.num_clients
+
+    if num_clients < 3 or num_clients > 10:
+        raise HTTPException(status_code=400, detail="Number of clients must be between 3 and 10.")
+    
+    if num_records <= 0 or num_records > 100000:
+        raise HTTPException(status_code=400, detail="Number of records must be between 1 and 100,000.")
+
+    # Generate and preprocess data
+    client_data = []
+    for i in range(num_clients):
+        df = generate_credit_card_data(num_records, fraud_percentage)
+        X, y = preprocess_data(df)
+        client_data.append((X, y))
+        with open(f'client_{i}_data.pkl', 'wb') as f:
+            pickle.dump((X, y), f)
+
+    run_federated_learning(num_clients - 1, num_rounds=3)
+
+    # Evaluate Federated Model on the remaining dataset
+    X_test, y_test = client_data[-1]
+    scaler = StandardScaler()
+    X_test = scaler.fit_transform(X_test)
+
+    # Load the final federated model (from the last client)
+    with open(f'client_{num_clients - 2}_data.pkl', 'rb') as f:
+        X_last_client, y_last_client = pickle.load(f)
+
+    model = LogisticRegression()
+    model.fit(X_last_client, y_last_client)
+    predictions = model.predict(X_test)
+    federated_accuracy = accuracy_score(y_test, predictions)
+
+    # Centralized Model for Comparison
+    X, y = client_data[0]
+    centralized_accuracy = centralized_training_evaluation(X, y)
+
+    return {
+        "federated_accuracy": federated_accuracy,
+        "centralized_accuracy": centralized_accuracy
+    }
 
 #SERVER TERMINAL COMMAND = python -m uvicorn main:app --reload --port 3003 
 #OR ANY PORT NUMBER, BUT MUST BE SAME AS URL USED IN MATCH HANDLER FUNCTION IN REACT APP
