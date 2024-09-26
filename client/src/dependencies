@@ -1,0 +1,20 @@
+To install the necessary dependencies, run the following commands:
+
+npm install axios
+npm install @react-oauth/google @azure/msal-browser
+npm install react-recaptcha-v3
+
+
+*Key Changes and Enhancements
+
+- News API Integration:
+Integrated dynamic cybersecurity news feed using the News API.
+Merged dynamic and static news to create a comprehensive News & Events section.
+Optimized Axios for fetching external API data.
+
+- Secure Registration Page:
+ReCAPTCHA: Integrated Google ReCAPTCHA for additional security, protecting the registration process from bot attacks.
+Input Validation: Implemented detailed checks for required fields, ensuring secure and valid data input during the registration process.
+Password Encryption: Used secure hashing algorithms for password handling and storage.
+External Authentication: Added support for external authentication services such as Firebase and Microsoft Identity.
+

@@ -28,6 +28,141 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+.news-event-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.news-event-container button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.news-event-card {
+    width: 50vw;
+    max-width: 800px;
+    height: auto;
+    min-height: 250px; /* Increased to accommodate larger content */
+    background-color: #5d5d5d;
+    padding: 20px;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s, background-color 0.3s;
+    overflow: hidden; /* Ensures content doesn't overflow */
+    text-align: left; /* Align content left for better readability */
+}
+
+.news-event-card:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.content-box {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#description {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    color: var(--text-color); /* Better text color */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits description to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+#date {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.news-event-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.news-event-card a {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--accent-color); /* Accent color for links */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.news-event-card a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .news-event-card {
+        width: 90vw;
+    }
+
+    .news-event-container {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+/* OLD CODE */
+
+
+/* :root {
+    --primary-color: #0A192F;
+    --secondary-color: #172A45;
+    --accent-color: #64FFDA;
+    --text-color: #8892B0;
+    --background-color: #0A192F;
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+.news-events {
+    background: #f6f6f6;
+    padding: 50px 0;
+    text-align: center;
+    color: var(--primary-color);
+    font-family: var(--body-font);
+}
+
+.news-events h2 {
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.news-event-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -47,6 +182,7 @@
     background-color: var(--accent-color);
     transform: scale(1.05);
 }
+
 
 .news-event-card {
     width: 52vw;
@@ -110,4 +246,4 @@
     .news-event-card {
         width: 90vw;
     }
-}
+} */
