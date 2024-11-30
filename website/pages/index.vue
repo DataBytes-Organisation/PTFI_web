@@ -1,0 +1,163 @@
+<template>
+
+<div id="back-ground">
+  <div id="home-page">
+      {/* Section requires updated CSS when relevant image is included in project */}
+      <div id="company-vision">
+          <div id="company-intro">
+              <h1>Company Vision</h1>
+              <div id="intro-text">
+                  <p>
+                      Privacy technology in the context of financial intelligence refers to various techniques
+                      and tools used to protect sensitive financial data and maintain the privacy of
+                      individuals and organizations involved in financial transactions and activities.
+                  </p>
+                  <div id="learn-more-button">
+                      <!-- <Link to="/AboutUs">Learn More</Link> -->
+                  </div>
+              </div>
+              <div id="section-image"></div>
+          </div>
+      </div>
+      <div id="slideshow">
+          <BenefitsSection />
+          <div id="news">
+              <!-- <NewsEventSection />  -->
+          </div>
+          <div id="services">
+              <!-- <ServicesSection /> -->
+          </div>
+      </div>
+  </div>
+</div>
+</template>
+
+<style lang="css" scoped>
+:root {
+  --primary-color: #0A192F;
+  --secondary-color: #172A45;
+  --accent-color: #64FFDA;
+  --text-color: #8892B0;
+  --background-color: #F8F9FA;
+}
+
+#back-ground {
+  background-image: url('../Images/backgroundSource.png'), url('../Images/backgroundSource_2.png');
+  background-position: -80px 20%, 100% 90%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  background-attachment: fixed;
+}
+
+#home-page {
+  width: 80%;
+  max-width: 1600px;
+  margin: 64px auto 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+#company-vision {
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  padding: 60px 0;
+  color: var(--text-color);
+}
+
+#company-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  flex-wrap: wrap;
+}
+
+#company-intro h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#intro-text {
+  flex: 1;
+  padding-right: 50px;
+}
+
+#intro-text p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+#learn-more-button a {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+#learn-more-button a:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+#section-image {
+  flex: 1;
+  height: 400px;
+  background-image: url('../Images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+#slideshow {
+  padding: 60px 0;
+  text-align: center;
+}
+
+#news {
+  margin: 40px 0;
+}
+
+#services {
+  padding: 60px 0;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  #company-intro {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  #intro-text {
+      padding-right: 0;
+  }
+
+  #section-image {
+      width: 100%;
+      margin-top: 20px;
+  }
+}
+
+@media (min-width: 2560px) {
+  #home-page {
+      width: 60%;
+  }
+}
+
+@media (min-width: 3840px) {
+  #home-page {
+      width: 40%;
+  }
+}
+
+</style>
