@@ -9,48 +9,52 @@
 .footer-panel {
     background: var(--primary-color);
     color: var(--text-color);
-    padding: 60px 0 30px;
-    width: 100%;
-    float:left;
-    margin-top: auto;
+    padding: 32px 0;
 }
 
-.footer-content {
+.footer-container {
+    margin: auto;
     max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 24px;
 }
 
 .footer-logo {
     width: 100%;
-    max-width: 200px;
-    margin-bottom: 30px;
 }
 
-.footer-logo img {
-    width: 100%;
-    height: auto;
-}
-
-.footer-links {
+.social-logos {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    gap: 8px;
+    margin-left: 24px;
+}
+
+#logo, .social-logo {
     width: 100%;
+    object-fit: contain;
+}
+
+#logo {
+    height: 56px;
+    margin: 20px 0 16px;
+}
+
+.social-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
 }
 
 .footer-column {
-    width: calc(25% - 20px);
-    margin-bottom: 30px;
+    width: 100%;
 }
 
 .footer-column h3 {
     color: var(--accent-color);
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    text-align: left;
 }
 
 .footer-column ul {
@@ -59,7 +63,7 @@
 }
 
 .footer-column ul li {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
 .footer-column ul li a {
@@ -72,59 +76,18 @@
     color: var(--accent-color);
 }
 
-.footer-column-special {
-    width: auto;
-}
-
-.footer-column-special img {
-    width: 32px;
-    height: 32px;
-    margin: 10px 10px 0 0;
-    border-radius: 4px;
-    transition: opacity 0.3s;
-}
-
-.footer-column-special img:hover {
-    opacity: 0.8;
-}
-
-.contact-us-button {
-    background-color: transparent;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    font-weight: 600;
-}
-
-.contact-us-button:hover {
-    background-color: rgba(100, 255, 218, 0.1);
-}
-
 .rights {
-    background-color: var(--primary-color);
+    /* col-span-4 */
+    grid-column: 1 / -1;
+    border-top: 2px solid var(--secondary-color);
+    padding: 16px 16px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rights p {
     color: var(--text-color);
-    text-align: center;
     font-size: 0.9rem;
-}
-
-#line {
-    width: 50%;
-    height: 1px;
-    background-color: var(--text-color);
-    margin: 20px auto;
-    opacity: 0.2;
-}
-
-@media (max-width: 768px) {
-    .footer-column,
-    .footer-column-special {
-        width: 100%;
-    }
-
-    .footer-logo {
-        margin: 0 auto 30px;
-    }
+    text-align: center;
+    margin: 0;
 }
