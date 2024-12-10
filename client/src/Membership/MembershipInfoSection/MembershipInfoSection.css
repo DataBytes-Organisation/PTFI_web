@@ -1,0 +1,60 @@
+:root {
+  --primary-color: #0A192F;
+  --text-color: #000;
+  --background-color: #fff;
+  --placeholder-color: #ccc;
+}
+
+.membership-info-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #fff;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.membership-info-box {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 10px;
+}
+
+.membership-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.membership-info-placeholder {
+  width: 50px;
+  height: 50px;
+  background-color: var(--placeholder-color);
+}
+
+.body-text {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.membership-info-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #000;
+  margin: 0; 
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .membership-info-section {
+    flex-direction: column;
+  }
+
+  .membership-info-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
