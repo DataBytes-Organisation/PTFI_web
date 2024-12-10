@@ -1,0 +1,108 @@
+:root {
+    --primary-color: #0A192F;
+    --secondary-color: #172A45;
+    --accent-color: #64FFDA;
+    --text-color: #8892B0;
+    --background-color: #f6f6f6;
+}
+
+.signUp-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #fff;
+    width: 90%;
+    margin: 0 auto 40px auto;
+    gap: 40px;
+}
+
+.signUp-title {
+    font-size: 3rem;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signUp-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.signUp-image {
+    width: 800px;
+    height: 500px;
+    background-color: rgb(93, 93, 93);
+    border-radius: 10px;
+}
+
+.signUp-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.signUp-content h2 {
+    font-size: 3rem;
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.signUp-description {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    max-width: 700px;
+    margin: 0 auto;
+    word-wrap: break-word;
+}
+
+.signUp-text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 90px;
+    max-width: 700px;
+}
+
+.signUp-button {
+    padding: 40px 120px;
+    background-color: rgba(10, 25, 47, 0.9);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+.signUp-button:hover {
+    background-color: #0EF4BD;
+}
+
+@media (max-width: 768px) {
+    .signUp-section {
+        gap: 20px;
+    }
+
+    .signUp-content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .signUp-image {
+        width: 100%;
+        height: auto;
+    }
+}
