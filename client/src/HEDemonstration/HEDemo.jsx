@@ -59,7 +59,7 @@ const HEDemo = () => {
 
   return (
     <div className="he-container">
-      <h1>Demonstrating the concept:</h1>
+      <h1 className="h1">Demonstrating the concept:</h1>
       <p>
         While true homorphic encryption is a complicated mathematical process, it uses a polynomial function (think back to high school algebra when learning quadratics) in order
         to encrypt the data. Consider the following demonstration, which uses a simplified polynomial in order to demonstrate the concept. You can input any two numbers,

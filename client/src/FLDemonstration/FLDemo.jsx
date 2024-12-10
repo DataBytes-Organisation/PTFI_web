@@ -48,7 +48,7 @@ const FLDemo = () => {
           </div>
           <br></br>
           <form onSubmit={handleSubmit}>
-              <div>
+              <div className="formDiv">
                   <label>Number of Records:</label>
                   <input
                       type="number"
@@ -56,7 +56,7 @@ const FLDemo = () => {
                       onChange={(e) => setNumRecords(e.target.value)}
                   />
               </div>
-              <div>
+              <div className="formDiv">
                   <label>Fraud Percentage:</label>
                   <input
                       max={0.1}
@@ -71,7 +71,7 @@ const FLDemo = () => {
                       }}
                   />
               </div>
-              <div>
+              <div className="formDiv">
                   <label>Number of Clients:</label>
                   <input
                       type="number"
