@@ -1,51 +1,68 @@
-import React from 'react';
+import { useState } from 'react';
 import './NavBar.css';
 import logo from '../Images/Logo.png';
 import {HashLink as Link} from 'react-router-hash-link';
 
 
 function NavBar() {
-    // 使用 React 的方式处理点击事件
-    function toggleMenu() {
-        const menu = document.getElementById('side-menu');
-        if (menu.style.width === '200px') {
-            menu.style.width = '0';
-        } else {
-            menu.style.width = '200px';
-        }
+    const [technicalMenuOpened, setTechnicalMenuOpened] = useState(false);
+    const [membershipMenuOpened, setMembershipMenuOpened] = useState(false); // unused but kept for future use
+    const [publicationMenuOpened, setPublicationMenuOpened] = useState(false); // unused but kept for future use
+
+    const mouseLeave = () => {
+        setTechnicalMenuOpened(false);
+        setMembershipMenuOpened(false);
+        setPublicationMenuOpened(false);
+    }
+
+    const mouseEnterTechnical = () => {
+        setMembershipMenuOpened(false);
+        setPublicationMenuOpened(false);
+        setTechnicalMenuOpened(true);
+    }
+
+    const mouseEnterMembership = () => {
+        setTechnicalMenuOpened(false);
+        setPublicationMenuOpened(false);
+        setMembershipMenuOpened(true);
+    }
+
+    const mouseEnterPublication = () => {
+        setTechnicalMenuOpened(false);
+        setMembershipMenuOpened(false);
+        setPublicationMenuOpened(true);
     }
 
     return (
-        <div id="navbar">
-            {/*logo should be imported added to a  resource folder and referenced appropriately*/}
+        <div id="navbar" onMouseLeave={mouseLeave}>
             <div id="logo-container">
-                {/* Wrap the image with a Link component */}
-                <Link to="/#company-vision">
+                <Link to="/">
                     <img id="logo" src={logo} className="logo" alt="Logo"/>
                 </Link>
             </div>
 
             <div id="nav-links">
-                <Link to="/AboutUs" className="nav-link">About us</Link>
-                {/*<Link to="/Membership" className="nav-link">Membership</Link>*/}
-                {/*<Link to="/Publication" className="nav-link">Publication</Link>*/}
-                {/*<Link to="/Technical" className="nav-link">Technical Communities</Link>*/}
-                <Link to="/Demonstration" className="nav-link">List Matching</Link>
-                <Link to="/HEOverview" className="nav-link">Homomorphic Encryption</Link>
-                <Link to="/FLOverview" className="nav-link">Federated Learning</Link>
-                <Link to="/DPOverview" className='nav-link'>Differential Privacy</Link>
-                <Link to='/SMPCOverview' className='nav-link'>Secure Multi-Party Computation</Link>
-                
+                <Link to="/AboutUs" onMouseEnter={mouseLeave} className="nav-link">About us</Link>
+
+                <Link to="/Technical" onMouseEnter={mouseEnterTechnical} className="nav-link">Technical</Link>
+                {technicalMenuOpened && (
+                    <div id="technical-menu-popover" class="nav-menu">
+                        <Link to="/HEOverview" className="nav-menu-link">Homomorphic Encryption</Link>
+                        <Link to="/FLOverview" className="nav-menu-link">Federated Learning</Link>
+                        <Link to="/DPOverview" className="nav-menu-link">Differential Privacy</Link>
+                        <Link to='/SMPCOverview' className='nav-menu-link'>Secure Multi-Party Computation</Link>
+                        <Link to="/Demonstration" className="nav-menu-link">List Matching</Link>
+                    </div>
+                )}
+
+                <Link to="/Membership" onMouseEnter={mouseEnterMembership} className="nav-link">Membership</Link>
+                <Link to="/Publication" onMouseEnter={mouseEnterPublication} className="nav-link">Publication</Link>
             </div>
-            <button id="menubtn" onClick={toggleMenu}>Menu</button>
-            <div id="side-menu" className="side-nav">
-                <Link to="/Join" className="nav-link">Join PTFI</Link>
-                <Link to="/Registration" className="nav-link">Registration</Link>
-                <Link to="/AboutUs" className="nav-link">About us</Link>
-                <Link to="/Membership" className="nav-link">Membership</Link>
-                <Link to="/Publication" className="nav-link">Publication</Link>
-                <Link to="/Technical" className="nav-link">Technical Communities</Link>
-                <button onClick={toggleMenu} id="closebtn" className="closebtn">&times; Close</button>
+
+            <div id="cta-container">
+                <Link to="/Join">
+                    <button id="cta-button">Join PTFI</button>
+                </Link>
             </div>
         </div>
     );
