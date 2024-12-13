@@ -1,0 +1,157 @@
+/* General Layout */
+.he-overview {
+    font-family: Arial, sans-serif;
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 60px; /* Padding around the content */
+    background-color: #f8f9fa;
+    max-width: 1200px; /* Limit the content width */
+}
+
+/* Header Styles */
+.he-header {
+    text-align: center;
+    margin-bottom: 60px; /* Increased spacing below the header */
+}
+
+.he-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px; /* Added more space below the title */
+}
+
+.he-summary {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8; /* Slightly increased line height for readability */
+}
+
+/* Subtopic Section */
+.he-subtopic {
+    margin-bottom: 60px; /* Increased spacing between subtopics */
+    position: relative;
+}
+
+.subtopic-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Vertically center text and image */
+    gap: 40px; /* Consistent gap between text and image */
+    position: relative;
+    max-width: 100%; /* Ensure it spans the container */
+}
+
+/* Left Section Wrapper */
+.subtopic-left-wrapper {
+    flex: 1; /* Equal width for text and image */
+    max-width: 48%; /* Constrain width to maintain layout consistency */
+    display: flex;
+    flex-direction: column; /* Ensure text aligns properly */
+    justify-content: center; /* Vertically center text */
+    padding: 20px 30px 30px; /* Reduced top padding */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.subtopic-left h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px; /* Reduced space below the header */
+    text-align: center;
+}
+
+.subtopic-left p,
+.subtopic-left ul {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8; /* Increased line spacing for better readability */
+    margin: 0;
+}
+
+.subtopic-left ul {
+    padding-left: 20px;
+}
+
+.subtopic-left ul li {
+    margin-bottom: 12px;
+}
+
+/* Image Section */
+.subtopic-right {
+    flex: 1; /* Equal width for text and image */
+    max-width: 48%; /* Constrain width to maintain layout consistency */
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+}
+
+.subtopic-right img {
+    width: 100%; /* Ensure all images take up the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    display: block;
+}
+
+/* Full-Width Subtopic (No Image) */
+.subtopic-full-width {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px; /* Spacing between subtopics */
+}
+
+.subtopic-full-width .subtopic-left-wrapper {
+    max-width: 100%; /* Allow the text container to span the full width */
+    padding: 20px 30px; /* Reduced top padding */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.he-footer {
+    text-align: center;
+    margin-top: 60px; /* Increased spacing above the footer */
+}
+
+.he-footer h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px; /* Added more space below the footer heading */
+}
+
+.he-footer p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px; /* Increased spacing below footer text */
+}
+
+.nav-link-demo {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-link-demo:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .he-overview {
+        padding: 30px; /* Adjust padding for smaller screens */
+    }
+
+    .subtopic-container {
+        flex-direction: column;
+        gap: 20px; /* Reduced gap for smaller screens */
+    }
+
+    .subtopic-left-wrapper,
+    .subtopic-right {
+        max-width: 100%; /* Allow full-width stacking on smaller screens */
+    }
+}
