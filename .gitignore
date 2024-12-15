@@ -3,4 +3,3 @@
 *node_modules/
 *coverage/
 *.package_lock.json
-*.DS_Store
