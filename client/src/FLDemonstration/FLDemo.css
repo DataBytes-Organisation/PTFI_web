@@ -20,7 +20,7 @@ form {
   width: 100%;
 }
 
-form div {
+.form-div {
   display: flex;
   flex-direction: column;
   align-items: center;

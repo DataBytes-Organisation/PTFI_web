@@ -14,7 +14,7 @@ import FooterPanel from './FooterPanel/FooterPanel';
 import ContactPage from './Contact/ContactPage';
 import TermsAndConditions from "./Terms&Conditions/Terms&Conditions";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
-import RegistrationPage from "./Registration/Registraion";
+import RegistrationPage from "./Registration/Registration";
 import DSImplementaion from "./ListMatchingDemonstration/DSImplementation"
 import HEDemo from './HEDemonstration/HEDemo';
 import FLDemo from './FLDemonstration/FLDemo';

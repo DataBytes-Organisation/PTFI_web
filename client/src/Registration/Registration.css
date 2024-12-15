@@ -1,6 +1,5 @@
 .registration-page {
     width: 100%;
-    margin-top: 64px;
     padding: 20px;
     text-align: center;
     box-sizing: border-box;
@@ -8,44 +7,75 @@
 
 #registration-background {
     border-radius: 8px;
-    width: 50%;
+    width: 40%;
     background-color: #f2f2f2;
-    margin: auto;
+    margin: 60px auto 0;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.form-group-single {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%
 }
 
 input[type="text"],
 input[type="date"],
 input[type="password"],
 input[type="tel"],
-input[type="email"] {
+input[type="email"],
+select {
     padding: 10px;
-    width: 35%;
+    width: 48%;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin-left: 20px;
+    box-sizing: border-box;
 }
 
-input[type="occupation"],
-input[type="Address"] {
+input[type="text"].occupation,
+input[type="text"].address {
     padding: 10px;
-    width: 75%;
+    width: 100%;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin-left: 20px;
+    box-sizing: border-box;
 }
 
 input[type="checkbox"] {
-
-    margin-right: 10px;
+    border-radius: 8px;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
-button[type="submit"] {
+.checkbox-label {
+    width: 60%;
+    display: inline-block;
+    align-items: center;
+    text-align: left;
+    font-size: small;
+}
+
+button {
     width: 50%;
     height: 42px;
     padding: 0.5rem 1rem;
@@ -55,18 +85,25 @@ button[type="submit"] {
     background-color: rgba(0, 0, 0, 1);
     color: #fdfbfb;
     cursor: pointer;
-    margin: 30px;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-button[type="submit"]:hover {
+button.socials {
+    background-color: white;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+button:hover {
     background-color: #939090;
 }
 
-.social-login button:hover {
-    background-color: #939090;
+img {
+    margin-right: 10px;
+    height: 24px;
+    width: auto;
 }
 
 .or-separator {
@@ -76,29 +113,28 @@ button[type="submit"]:hover {
     margin: 1rem 0;
     color: #888;
     margin-top: 10px;
-    margin-bottom: -10px;
-    }
+}
 
-    
-.social-login button {
-    width: 50%;
-    height: 42px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    margin: 5px;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    text-align: center;
+/* Error Handling */
+.defaultInput {
+    border: 1px solid #ccc !important;
+}
+
+.validInput {
+    border: 1px solid green !important;
+}
+
+.invalidInputl {
+    border: 1px solid red !important;
+}
+
+.errorText {
+    color: red !important;
 }
 
 .registration-text {
     text-align: left;
-    margin-left: 80px;
+    margin-left: 10px;
     margin-bottom: 30px;
 }
 
@@ -106,7 +142,7 @@ button[type="submit"]:hover {
     color: rgba(0, 0, 0, 1);
     font-size: 2.5rem;
     margin-bottom: 0px;
-    padding-right: 0;
+    padding-right: 20px;
     width: 10%;
     display: inline-block;
 }
@@ -116,13 +152,12 @@ button[type="submit"]:hover {
     font-size: 1.2rem;
     margin-top: 0px;
     padding: 0;
-
 }
 
 .registration-text h6 {
     color: rgba(0, 0, 0, 1);
     display: inline-block;
-    width: 25%;
+    width: 30%;
     margin-bottom: 1px;
     margin-left: 20px;
 }
@@ -135,45 +170,4 @@ button[type="submit"]:hover {
 #Microsoft {
     height: 16px;  /* Set a fixed height for both icons */
     width: 16px;   /* Allow the width to adjust based on the aspect ratio */
-}
-
-.social-login{
-    width: 80%; /* Adjusted to not span the entire width of the background */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px; /* Adds space between text and buttons */
-    margin-left: 90px;
-    margin-bottom: 10px;
-}
-
-.social-login button img {
-    margin-right: 10px; /* Space between the icon and the text */
-    height: 24px; /* Unified height for all icons */
-    width: auto; /* Width adjusts based on aspect ratio */
-}
-
-.social-login button {
-    width: 63%;
-    height: 42px;
-    margin: 10px 0; /* Standard margin around buttons */
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    display: flex; /* Use flex to center align the image and text */
-    align-items: center; /* Vertical alignment */
-    justify-content: center; /* Horizontal alignment */
-    margin-bottom: 20px;
-}
-
-.registration-text  h6 {
-    color: rgba(0, 0, 0, 1);
-    display: inline-block;
-    width: 25%;
-    margin-bottom: 1px;
-    margin-left: 35px;
 }
